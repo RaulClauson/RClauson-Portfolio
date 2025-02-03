@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Neue";
+  src: url("/fonts/NeueHaasDisplayMediu.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  color-scheme: light dark;
+  --background: #000000;
+  --sec-background: #0d0d0d;
+  --color: #ffffff;
+  --sec-color: #d5d5d5;
+  --third-color: #a2a2a2;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #ffffff;
+    --sec-background: #f3f3f3;
+    --color: #0d0d0d;
+    --sec-color: #3d3d3d;
+    --third-color: #6d6d6d;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--color);
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--background) !important;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--third-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sec-color);
+}
+
+@layer utilities {
+  /* ROOT */
+  .page {
+    @apply flex flex-col justify-between gap-36 min-h-[100vh];
+  }
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .common-padding {
+    @apply lg:py-12 md:py-9 sm:py-6 py-6 lg:px-16 md:px-11 sm:px-6 px-6;
+  }
+  .common-py {
+    @apply lg:py-12 md:py-9 sm:py-6 py-6;
+  }
+  .common-px {
+    @apply lg:px-16 md:px-11 sm:px-6 px-6;
+  }
+
+  .common-margin {
+    @apply lg:my-12 md:my-9 sm:my-6 my-6 lg:mx-16 md:mx-11 sm:mx-6 mx-6;
+  }
+  .common-my {
+    @apply lg:my-12 md:my-9 sm:my-6 my-6;
+  }
+  .common-mx {
+    @apply lg:mx-16 md:mx-11 sm:mx-6 mx-6;
+  }
+
+  .text-8xl {
+    font-size: clamp(3rem, 2.3077rem + 3.0769vw, 6rem);
+    letter-spacing: -0.03em;
+  }
+  .text-5xl {
+    font-size: clamp(2rem, 1.7692rem + 1.0256vw, 3rem);
+    letter-spacing: -0.02em;
+  }
+  .text-3xl {
+    font-size: clamp(1.25rem, 1.0769rem + 0.7692vw, 2rem);
+    letter-spacing: -0em !important;
+  }
+  .text-2xl {
+    font-size: clamp(1.125rem, 1.0385rem + 0.3846vw, 1.5rem);
+    letter-spacing: -0em !important;
+  }
+  .text-xl {
+    font-size: clamp(0.875rem, 0.7885rem + 0.3846vw, 1.25rem);
+    letter-spacing: -0em !important;
+  }
+
+  /* GSAP */
+  .header {
+    @apply opacity-0 translate-y-20;
+  }
+  .hero {
+    @apply opacity-0 translate-y-20;
+  }
+  .heroAbout {
+    @apply opacity-0 translate-y-20 w-full;
+  }
+  .heroImgAbout {
+    @apply absolute top-[10vh] scale-[1.2];
+  }
+  .about {
+    @apply opacity-0 translate-x-20;
+  }
+  .gsap {
+    @apply opacity-0 translate-y-20;
+  }
+
+  /* Específicos */
+  .navbar {
+    @apply w-full flex justify-between items-center text-xl;
+  }
+  .Menu {
+    @apply fixed top-[-100vh] left-0 w-full h-full flex flex-center bg-[var(--color)] text-8xl z-40;
+  }
+  .MenuLink {
+    @apply text-gray-400 hover:text-[var(--background)] transition-all;
+  }
+  .homeImgProject {
+    @apply w-full h-full object-cover object-center scale-150 opacity-0;
+  }
+  .homeVidProject {
+    @apply absolute w-[85%] object-contain object-center opacity-0 scale-150 pointer-events-none rounded-xl overflow-hidden;
+  }
+  .projectsControl {
+    @apply rounded-full border-2 border-gray-50 hover:bg-[var(--color)] hover:text-[var(--background)] bg-transparent text-2xl p-2 flex flex-center;
+  }
+  .titleAbout {
+    @apply opacity-0 translate-y-20 text-5xl;
+  }
+  .textAbout {
+    @apply opacity-0 translate-y-20 text-3xl text-gray-400;
+  }
+  .titleTextAbout {
+    @apply opacity-0 translate-y-20 text-3xl;
+  }
+  .titleImgAbout {
+    @apply opacity-0 translate-y-20 text-xl text-gray-400 absolute left-0;
+  }
+  .textImgAbout {
+    @apply opacity-0 translate-y-20 text-xl text-gray-400 absolute right-0;
+  }
+  .division {
+    @apply opacity-0 translate-y-20 w-full h-[2px] bg-gray-50;
+  }
+  .divisionComp {
+    @apply opacity-0 translate-y-20 h-[2px] bg-gray-400 common-mx;
+  }
+  .physics-container {
+    @apply h-full w-full border-2 border-gray-400 rounded-2xl overflow-hidden sm:pointer-events-auto pointer-events-none;
+  }
+}
+
+/* MENU LINK LINE ANIMATION */
+
+.link {
+  cursor: pointer;
+  position: relative;
+  text-decoration: none;
+}
+
+.link::before,
+.link::after {
+  position: absolute;
+  width: 100%;
+  height: 1.5px;
+  background: currentColor;
+  top: 100%;
+  left: 0;
+  pointer-events: none;
+}
+
+.link::before {
+  content: "";
+  /* show by default */
+}
+
+.link--metis::before {
+  transform-origin: 100% 50%;
+  transform: scale3d(0, 1, 1);
+  transition: transform 0.3s;
+}
+
+.link--metis:hover::before {
+  transform-origin: 0% 50%;
+  transform: scale3d(1, 1, 1);
+}
+
+/* CURSOR CUSTOMIZADO */
+
+.custom-cursor {
+  position: fixed;
+  width: 10px;
+  height: 10px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.2s ease, width 0.2s ease, height 0.2s ease;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+.custom-cursor.hovered {
+  width: 100px;
+  height: 100px;
+  background: url(/img/cursorHover.gif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transform: translate(-50%, -50%) scale(1.5);
+  filter: grayscale(100%); /* Ensure gif is also black and white*/
+}
+@media (max-width: 768px) {
+  .custom-cursor {
+    display: none;
+  }
+}
