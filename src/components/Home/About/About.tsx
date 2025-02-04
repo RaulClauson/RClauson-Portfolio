@@ -47,7 +47,7 @@ const About = () => {
   return (
     <section
       id="About"
-      className="w-full overflow-hidden common-padding flex justify-between lg:flex-row flex-col lg:gap-16 md:gap-11 sm:gap-6 gap-6 bg[var(--background)]"
+      className="w-full overflow-hidden common-padding flex justify-between lg:flex-row flex-col lg:gap-16 md:gap-11 sm:gap-6 gap-6 bg-[var(--background)]"
     >
       <div className="text-2xl text-gray flex-shrink-0">
         <p className="about sm:pl-12 pl-0">
