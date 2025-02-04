@@ -66,7 +66,7 @@ import {
 
 export const projects = [
   {
-    id: "1",
+    id: "Vapt-Vupt",
     title: "Vapt-Vupt",
     subtitle: "(Challenge - FIAP)",
     description:
@@ -101,7 +101,7 @@ export const projects = [
     team: LeoMi,
   },
   {
-    id: "2",
+    id: "Friendly",
     title: "Friendly",
     subtitle: "(Iniciação Científica - FIAP)",
     description:
@@ -139,7 +139,7 @@ export const projects = [
     team: Friendly,
   },
   {
-    id: "3",
+    id: "Energia",
     title: "Energia",
     subtitle: "(Global Solution 2 - FIAP)",
     description:
@@ -174,7 +174,7 @@ export const projects = [
     team: LeoMi,
   },
   {
-    id: "4",
+    id: "BlueGuardians",
     title: "Blue Guardians",
     subtitle: "(Global Solution 1 - FIAP)",
     description:
@@ -209,7 +209,7 @@ export const projects = [
     team: LeoMi,
   },
   {
-    id: "5",
+    id: "Sabordobem",
     title: "Sabor do bem",
     subtitle: "(TCC - ETEC)",
     description:
