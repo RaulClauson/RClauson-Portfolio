@@ -213,7 +213,7 @@ export const projects = [
     title: "Sabor do bem",
     subtitle: "(TCC - ETEC)",
     description:
-      "Sabor do Bem é um App que conecta supermercados a ONGs e asilos para reduzir o desperdício de alimentos e distribuí-los a quem precisa.",
+      "Um App que conecta supermercados a ONGs e asilos para reduzir o desperdício de alimentos e distribuí-los a quem precisa.",
     image: imgProject5,
     video: vidProject5,
     link: "https://sabordobem.vercel.app/",
