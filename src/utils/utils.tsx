@@ -11,19 +11,19 @@ export const smallHeroVideo = createVideo(
 
 // PROJECTS
 export const imgProject1 = createImage(
-  "Portfolio3/Imagens/qtdlbio9kstul9iksene"
+  "Portfolio3/Imagens/j58op33dgo3jfu1yavoa"
 );
 export const imgProject2 = createImage(
-  "Portfolio3/Imagens/ckp8o6lindxb8glnyeld"
+  "Portfolio3/Imagens/gtfjxcn6iu8yktynyai2"
 );
 export const imgProject3 = createImage(
-  "Portfolio3/Imagens/iej976qa4waxyvwymszv"
+  "Portfolio3/Imagens/qd5tf8aom6xsia9pixcp"
 );
 export const imgProject4 = createImage(
   "Portfolio3/Imagens/tmgvtepbibgdpzuhmoy1"
 );
 export const imgProject5 = createImage(
-  "Portfolio3/Imagens/eynz1xllpaoebfjqrox9"
+  "Portfolio3/Imagens/zdsbsqvw6mu37fotjiuc"
 );
 
 export const vidProject1 = createVideo(
