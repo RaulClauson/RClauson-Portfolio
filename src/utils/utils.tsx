@@ -2,11 +2,9 @@
 import { createImage, createVideo } from "./cloudinary.tsx";
 
 // HOME
-export const heroVideo = createVideo(
-  "Portfolio3/Videos/720p/dfw5kt74qvzokjteaeda"
-);
+export const heroVideo = createVideo("Portfolio3/Videos/rrojm7beghkptm8vwgbt");
 export const smallHeroVideo = createVideo(
-  "Portfolio3/Videos/720p/lnojhnz9ubzmcvpbfj48"
+  "Portfolio3/Videos/cymmyupmtokvgjjf9l33"
 );
 
 // PROJECTS
@@ -27,48 +25,48 @@ export const imgProject5 = createImage(
 );
 
 export const vidProject1 = createVideo(
-  "Portfolio3/Videos/720p/mem758fgwrvfkcgrp4gs"
+  "Portfolio3/Videos/adytk7xpaianx1szzhhk"
 );
 export const vidProject2 = createVideo(
-  "Portfolio3/Videos/720p/kkt0zdhshqfgc8bksywf"
+  "Portfolio3/Videos/m4uxhy0unuh4gkn5qoak"
 );
 export const vidProject3 = createVideo(
-  "Portfolio3/Videos/720p/fzivx9frvwvmi1smcwml"
+  "Portfolio3/Videos/flwz5stlgye13yofuqmj"
 );
 export const vidProject4 = createVideo(
-  "Portfolio3/Videos/720p/xuw9vomddnljkf62iuzh"
+  "Portfolio3/Videos/ibw9r70j9urjulzz0y9s"
 );
 export const vidProject5 = createVideo(
-  "Portfolio3/Videos/720p/lmlp3yrvcdovdhdbgw1s"
+  "Portfolio3/Videos/xdi4pl8cb70nk5vigbkm"
 );
 
 // Vapt-Vupt
 export const vaptPitch = createVideo(
-  "Portfolio3/VaptVupt/kqu88wgv62oboiuaugyn"
+  "Portfolio3/VaptVupt/bkb0gj27aeirejermxtj"
 );
 export const vaptDesk = createImage("Portfolio3/VaptVupt/zhkov8y7kflp4zenhrty");
 export const vaptMobile = createImage(
   "Portfolio3/VaptVupt/d6fimsbzhohsil8vbg94"
 );
 export const vaptSmall1 = createVideo(
-  "Portfolio3/VaptVupt/odana832ajdf6proxe5a"
+  "Portfolio3/VaptVupt/hnk7o4gwofyesh2cerl0"
 );
 export const vaptSmall2 = createVideo(
-  "Portfolio3/VaptVupt/faqkdzinnhtpgajhoe95"
+  "Portfolio3/VaptVupt/zx5hzbk7uefzerejjqaq"
 );
 export const vaptSmall3 = createVideo(
-  "Portfolio3/VaptVupt/uzvftkveywu0ezfs0v5b"
+  "Portfolio3/VaptVupt/czoastrtxqlm5x0m9hme"
 );
 export const vaptSmall4 = createVideo(
-  "Portfolio3/VaptVupt/l7gndkfruoualwpxy1hw"
+  "Portfolio3/VaptVupt/bsrpehgvciabdw9q94p6"
 );
-export const vaptBig1 = createVideo("Portfolio3/VaptVupt/afki8ztnormsmitdik55");
-export const vaptBig2 = createVideo("Portfolio3/VaptVupt/tnnyh74m4qptpu7djnax");
-export const vaptBig3 = createVideo("Portfolio3/VaptVupt/gtj6yxfosq0mw1uaja5x");
+export const vaptBig1 = createVideo("Portfolio3/VaptVupt/dszua6eig2yfw2d0gz0e");
+export const vaptBig2 = createVideo("Portfolio3/VaptVupt/y6lp2514a2xlk4dc2k5d");
+export const vaptBig3 = createVideo("Portfolio3/VaptVupt/uetua5kh0nqjhsxayzjk");
 
 // Friendly
 export const friendlyPitch = createVideo(
-  "Portfolio3/Friendly/tpgpcsmhpokaeieluwq7"
+  "Portfolio3/Friendly/kqfcfj1o2mngzooj9qvv"
 );
 export const friendlyDesk = createImage(
   "Portfolio3/Friendly/zx2gzyi9uw5pi8kirh29"
@@ -77,54 +75,54 @@ export const friendlyMobile = createImage(
   "Portfolio3/Friendly/jzyl74an9ypftguhbbir"
 );
 export const friendlySmall1 = createVideo(
-  "Portfolio3/Friendly/unpp0yvay3ftydkxjyel"
+  "Portfolio3/Friendly/ivioexy4grwuybrezxns"
 );
 export const friendlySmall2 = createVideo(
-  "Portfolio3/Friendly/ivryp39u2irpnxgpnw2w"
+  "Portfolio3/Friendly/vayoab2fjztiti7nukm6"
 );
 export const friendlySmall3 = createVideo(
-  "Portfolio3/Friendly/t8mcvkiv4gu0bijo9v58"
+  "Portfolio3/Friendly/cpjzkvxcmtsojuadlnfj"
 );
 export const friendlySmall4 = createVideo(
-  "Portfolio3/Friendly/dyvhzuqtozwo9e3rxykh"
+  "Portfolio3/Friendly/qnzxavvrsp1goyy4cgsv"
 );
 export const friendlyBig1 = createVideo(
-  "Portfolio3/Friendly/wtfhedotdwrs6wkwqtth"
+  "Portfolio3/Friendly/wijt3sq8rxcfnzaqz2sn"
 );
 export const friendlyBig2 = createVideo(
-  "Portfolio3/Friendly/mzodo0i5739lwbmfam7j"
+  "Portfolio3/Friendly/lcwtpjiiu15wsgwlp6ah"
 );
 export const friendlyBig3 = createVideo(
-  "Portfolio3/Friendly/huzqvndzvtgagvb70ugn"
+  "Portfolio3/Friendly/ym0ucr6wfxmb7q3xp7cg"
 );
 
 // Energia
 export const energPitch = createVideo(
-  "Portfolio3/Energia/yimvs7g36alcd8eiugh9"
+  "Portfolio3/Energia/xukm0ycmvgkmmipskr4d"
 );
 export const energDesk = createImage("Portfolio3/Energia/befolr6xlip1vxkurbdc");
 export const energMobile = createImage(
   "Portfolio3/Energia/nnqvj81ksb0sh0aqdqb9"
 );
 export const energSmall1 = createVideo(
-  "Portfolio3/Energia/z3jhztz0dajypfcsv57a"
+  "Portfolio3/Energia/pktc6ltkc0tntpwuvefj"
 );
 export const energSmall2 = createVideo(
-  "Portfolio3/Energia/sxczcmsm9prf8ku86rdd"
+  "Portfolio3/Energia/wfmjtq3inbfzueuoupjf"
 );
 export const energSmall3 = createVideo(
-  "Portfolio3/Energia/xe794ig5dzjwrgbrmtqn"
+  "Portfolio3/Energia/kgltpzaiaktdw4rty4k6"
 );
 export const energSmall4 = createVideo(
-  "Portfolio3/Energia/dmdhfha4htkjsfnxkebd"
+  "Portfolio3/Energia/c27yfhpo8mev5cdhev0k"
 );
-export const energBig1 = createVideo("Portfolio3/Energia/ma3mayegdvkc77bxa8tw");
-export const energBig2 = createVideo("Portfolio3/Energia/kqbjoawumofn93rtguce");
-export const energBig3 = createVideo("Portfolio3/Energia/xd5v2ttk6fxahbpqlv64");
+export const energBig1 = createVideo("Portfolio3/Energia/vsihikj4ctc1ba3j1bwo");
+export const energBig2 = createVideo("Portfolio3/Energia/f1gwruorx5kr8tbjk6dm");
+export const energBig3 = createVideo("Portfolio3/Energia/nq0fdeitzupaoid4mf4e");
 
 // Blue Guardians
 export const bluePitch = createVideo(
-  "Portfolio3/BlueGuardians/t9g9pvzd1bnav2k08yyb"
+  "Portfolio3/BlueGuardians/mu50bni8r9aidwvormmy"
 );
 export const blueDesk = createImage(
   "Portfolio3/BlueGuardians/mlx2qwp2umm1qpwgskks"
@@ -133,30 +131,30 @@ export const blueMobile = createImage(
   "Portfolio3/BlueGuardians/sxf5zdcjvizai6bqqyyp"
 );
 export const blueSmall1 = createVideo(
-  "Portfolio3/BlueGuardians/lc9md2hnukalrfwyiiwt"
+  "Portfolio3/BlueGuardians/cvgkpycksjiqtyuupzui"
 );
 export const blueSmall2 = createVideo(
-  "Portfolio3/BlueGuardians/utbhtj9ly2mgpcbd3k6d"
+  "Portfolio3/BlueGuardians/srnbatgvjoyrful37p93"
 );
 export const blueSmall3 = createVideo(
-  "Portfolio3/BlueGuardians/ctowe318y6nslsmc3wby"
+  "Portfolio3/BlueGuardians/h0msqgwkpijgnmlvovxb"
 );
 export const blueSmall4 = createVideo(
-  "Portfolio3/BlueGuardians/j4xyojgsubnf1pyf8xaj"
+  "Portfolio3/BlueGuardians/w6rvs6jgpsefhnkthuo1"
 );
 export const blueBig1 = createVideo(
-  "Portfolio3/BlueGuardians/ym1adyfsmb7bqqzdke0j"
+  "Portfolio3/BlueGuardians/kpglqpkiusg835jlbhtw"
 );
 export const blueBig2 = createVideo(
-  "Portfolio3/BlueGuardians/q89ozbaaqdkqokwzrr9w"
+  "Portfolio3/BlueGuardians/jydocyeuzhl7gmvi6nlh"
 );
 export const blueBig3 = createVideo(
-  "Portfolio3/BlueGuardians/uef5guwhgngwdm3rbxiu"
+  "Portfolio3/BlueGuardians/rfexbi6ho4n1douxl5mq"
 );
 
 // Sabor do bem
 export const saborPitch = createVideo(
-  "Portfolio3/Sabordobem/vsdumb4srufxcupxg0fq"
+  "Portfolio3/Sabordobem/geb1n67nvxdh93xbxrr3"
 );
 export const saborDesk = createImage(
   "Portfolio3/Sabordobem/pqgqfgvnptrjg1givtpw"
@@ -165,25 +163,25 @@ export const saborMobile = createImage(
   "Portfolio3/Sabordobem/gwfyexi9euusflilbg3v"
 );
 export const saborSmall1 = createVideo(
-  "Portfolio3/Sabordobem/q6rnmvqt3fmlwbko5fcd"
+  "Portfolio3/Sabordobem/jra6jxznqh8jwgg9c5fy"
 );
 export const saborSmall2 = createVideo(
-  "Portfolio3/Sabordobem/v6uh5fh1mbg5uiyrrs9l"
+  "Portfolio3/Sabordobem/dja12hdscs9dgyrn9ati"
 );
 export const saborSmall3 = createVideo(
-  "Portfolio3/Sabordobem/qmhucjele85w5ujq1myc"
+  "Portfolio3/Sabordobem/r35m4jejiwyqqbmmv9gq"
 );
 export const saborSmall4 = createVideo(
-  "Portfolio3/Sabordobem/m0duv0ef7z345ipdaq8q"
+  "Portfolio3/Sabordobem/ow67mh7j3y9uiwkkckmw"
 );
 export const saborBig1 = createVideo(
-  "Portfolio3/Sabordobem/zopxg15ogj2kdn7tx7ly"
+  "Portfolio3/Sabordobem/n7wgnsduousnubysqepm"
 );
 export const saborBig2 = createVideo(
-  "Portfolio3/Sabordobem/jnfxdifx5jtordrgklx0"
+  "Portfolio3/Sabordobem/hhutmr2xkxhn9wbr3eis"
 );
 export const saborBig3 = createVideo(
-  "Portfolio3/Sabordobem/guexqb9jfxrdzv8o6mjz"
+  "Portfolio3/Sabordobem/hrnpxlpkdllnnvx2qolc"
 );
 
 // Credits

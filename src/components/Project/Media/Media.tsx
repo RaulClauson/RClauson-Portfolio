@@ -1,7 +1,5 @@
 import { useParams } from "react-router-dom";
 import { projects } from "../../../constants/Projects";
-import { useGSAP } from "@gsap/react";
-import { animateWithGsap } from "../../../utils/animations";
 import { useState, useRef, useLayoutEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { AdvancedImage, AdvancedVideo } from "@cloudinary/react";
@@ -19,10 +17,6 @@ const Media = () => {
   const [showExpandButton, setShowExpandButton] = useState(false); // New state for the button
   const imagesContainerRef = useRef<HTMLDivElement>(null); // Reference for the images' container
   const [imagesLoaded, setImagesLoaded] = useState(false);
-
-  useGSAP(() => {
-    animateWithGsap(".gsap");
-  }, []);
 
   const handleImageLoad = () => {
     setImagesLoaded(true);
@@ -43,7 +37,7 @@ const Media = () => {
 
   return (
     <section id="Media" className="w-full flex flex-col lg:gap-9 gap-6">
-      <div className="gsap w-full aspect-video overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
+      <div className="w-full aspect-video overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
         <AdvancedVideo
           cldVid={project.big1}
           className="w-full h-full object-cover"
@@ -56,18 +50,18 @@ const Media = () => {
       <div className="flex flex-col relative">
         <div
           ref={imagesContainerRef} // Attach the ref to this div
-          className={`gsap w-full ${
+          className={`w-full ${
             expand ? "h-fit" : "lg:max-h-[300svh] h-fit"
           } overflow-hidden flex lg:gap-9 gap-6`}
         >
           <AdvancedImage
-            className="gsap w-[20%] h-fit lg:rounded-3xl rounded-2xl object-cover border-2 border-gray-50"
+            className="w-[20%] h-fit lg:rounded-3xl rounded-2xl object-cover border-2 border-gray-50"
             cldImg={project.mobile}
             alt="Landing page"
             onLoad={handleImageLoad}
           />
           <AdvancedImage
-            className="gsap lg:w-[calc(80%-36px)] w-[calc(80%-24px)] h-fit lg:rounded-3xl rounded-2xl object-cover border-2 border-gray-50"
+            className="lg:w-[calc(80%-36px)] w-[calc(80%-24px)] h-fit lg:rounded-3xl rounded-2xl object-cover border-2 border-gray-50"
             cldImg={project.desk}
             alt="Landing page"
             onLoad={handleImageLoad}
@@ -94,7 +88,7 @@ const Media = () => {
           </div>
         )}
       </div>
-      <div className="gsap gsap w-full aspect-video overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
+      <div className="w-full aspect-video overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
         <AdvancedVideo
           cldVid={project.big2}
           className="w-full h-full object-cover"
@@ -106,7 +100,7 @@ const Media = () => {
       </div>
       <div className="flex flex-col lg:gap-9 gap-6">
         <div className="flex lg:flex-row flex-col lg:gap-9 gap-6">
-          <div className="gsap w-full aspect-square overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
+          <div className="w-full aspect-square overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
             <AdvancedVideo
               cldVid={project.small1}
               className="w-full h-full object-cover"
@@ -116,7 +110,7 @@ const Media = () => {
               playsInline={true}
             />
           </div>
-          <div className="gsap w-full aspect-square overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
+          <div className="w-full aspect-square overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
             <AdvancedVideo
               cldVid={project.small2}
               className="w-full h-full object-cover"
@@ -128,7 +122,7 @@ const Media = () => {
           </div>
         </div>
         <div className="flex lg:flex-row flex-col lg:gap-9 gap-6">
-          <div className="gsap w-full aspect-square overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
+          <div className="w-full aspect-square overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
             <AdvancedVideo
               cldVid={project.small3}
               className="w-full h-full object-cover"
@@ -138,7 +132,7 @@ const Media = () => {
               playsInline={true}
             />
           </div>
-          <div className="gsap w-full aspect-square overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
+          <div className="w-full aspect-square overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
             <AdvancedVideo
               cldVid={project.small4}
               className="w-full h-full object-cover"
@@ -149,7 +143,7 @@ const Media = () => {
             />
           </div>
         </div>
-        <div className="gsap w-full aspect-video overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
+        <div className="w-full aspect-video overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
           <AdvancedVideo
             cldVid={project?.big3}
             className="w-full h-full object-cover"
