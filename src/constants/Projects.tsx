@@ -74,7 +74,7 @@ export const projects = [
     image: imgProject1,
     video: vidProject1,
     link: "https://vapt-vupt.vercel.app/",
-    year: "(2024) Fev - Set",
+    year: "(2024) Fev - Nov",
     youtube: "https://www.youtube.com/@Vapt-Vupt_Challenge",
     credits: [
       { name: "Leonardo Botelho", work: "Dev Back-End" },
@@ -105,11 +105,11 @@ export const projects = [
     title: "Friendly",
     subtitle: "(Iniciação Científica - FIAP)",
     description:
-      "Uma plataforma de Inteligência Artificial que te ajuda a construir uma vida mais leve e equilibrada cuidando da sua saúde mental e emocional.",
+      "Uma plataforma de IA que te ajuda a cuidar da sua saúde mental e emocional através de um Chatbot e Reconhecimento facial.",
     image: imgProject2,
     video: vidProject2,
     link: "https://reco-facial-friendly.vercel.app/",
-    year: "(2024) Fev - Set",
+    year: "(2024) Fev - Out",
     youtube: "https://www.youtube.com/@friendly2024",
     credits: [
       { name: "Henrique Franco", work: "Auxiliar de projeto" },
@@ -147,7 +147,7 @@ export const projects = [
     image: imgProject3,
     video: vidProject3,
     link: "https://gs-sigma.vercel.app/",
-    year: "(2024) Set",
+    year: "(2024) Nov",
     youtube: "https://www.youtube.com/@Energia-o7u",
     credits: [
       { name: "Leonardo Botelho", work: "Dev Back-End" },
@@ -217,7 +217,7 @@ export const projects = [
     image: imgProject5,
     video: vidProject5,
     link: "https://sabordobem.vercel.app/",
-    year: "(2023) Fev - Set",
+    year: "(2023) Fev - Nov",
     youtube: "https://www.youtube.com/@SabordoBemTCC",
     credits: [
       { name: "Leonardo Andorni", work: "Dev Mobile" },
