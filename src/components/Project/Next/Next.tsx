@@ -7,7 +7,6 @@ import {
 import { imgProject1 } from "../../../utils/utils";
 import { ArrowRight } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
-import { AdvancedImage, AdvancedVideo } from "@cloudinary/react";
 
 interface Params {
   [key: string]: string | undefined;
@@ -55,18 +54,26 @@ const Next = () => {
           className="flex flex-col md:gap-4 gap-2 project-item"
         >
           <div className="flex flex-center overflow-hidden rounded-2xl relative">
-            <AdvancedImage
-              cldImg={nextProject.image}
-              alt={nextProject.title}
-              className="homeImgProject cursor-pointer"
-            />
-            <AdvancedVideo
-              cldVid={nextProject.video}
+            <picture>
+              <source srcSet={`/${nextProject.image}.webp`} type="image/webp" />
+              <source srcSet={`/${nextProject.image}.png`} type="image/png" />
+              <img
+                src={`/${nextProject.image}.png`}
+                alt={nextProject.title}
+                className="homeImgProject cursor-pointer"
+                loading="lazy"
+              />
+            </picture>
+            <video
               className="homeVidProject cursor-pointer"
               preload="none"
               muted
               autoPlay
-            />
+              playsInline
+            >
+              <source src={`/${nextProject.video}.webm`} type="video/webm" />
+              <source src={`/${nextProject.video}.mp4`} type="video/mp4" />
+            </video>
           </div>
           <div className="flex flex-col md:gap-2 gap-1">
             <p className="text-xl text-gray-400">{nextProject.subtitle}</p>
@@ -75,10 +82,16 @@ const Next = () => {
         </Link>
         <div className="flex flex-col md:gap-4 gap-2">
           <div className="flex flex-center overflow-hidden rounded-2xl relative">
-            <AdvancedImage
-              cldImg={imgProject1}
-              className="homeImgProject opacity-0"
-            />
+            <picture>
+              <source srcSet={`/${imgProject1}.webp`} type="image/webp" />
+              <source srcSet={`/${imgProject1}.png`} type="image/png" />
+              <img
+                src={`/${imgProject1}.png`}
+                alt={nextProject.title}
+                className="homeImgProject opacity-0"
+                loading="lazy"
+              />
+            </picture>
             <Link
               to="/Projetos"
               className="!absolute text-5xl link link--metis flex flex-center gap-2"

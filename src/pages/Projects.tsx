@@ -7,11 +7,10 @@ import Controls from "../components/Projects/Controls";
 import { motion as m } from "framer-motion";
 import Footer from "../components/Footer/Footer";
 import { Link } from "react-router-dom";
-import { AdvancedImage, AdvancedVideo } from "@cloudinary/react";
 
 const Projects: React.FC = () => {
-  const imgRefs = useRef<React.RefObject<AdvancedImage>[]>([]);
-  const vidRefs = useRef<React.RefObject<AdvancedVideo>[]>([]);
+  const imgRefs = useRef<React.RefObject<HTMLImageElement>[]>([]);
+  const vidRefs = useRef<React.RefObject<HTMLVideoElement>[]>([]);
   const lenisRef = useRef<Lenis | null>(null); // Ref for Lenis instance
   const [gridItemWidth, setGridItemWidth] = useState(0); // State to store grid item width
   const [displayProjects, setDisplayProjects] = useState(projects);
@@ -124,18 +123,26 @@ const Projects: React.FC = () => {
             className="hero gridItem h-full flex flex-col md:gap-2 gap-1 project-item"
           >
             <div className="h-full flex flex-center overflow-hidden rounded-2xl relative">
-              <AdvancedImage
-                cldImg={project.image}
-                alt={project.title}
-                className="homeImgProject cursor-pointer"
-              />
-              <AdvancedVideo
-                cldVid={project.video}
+              <picture className="homeImgProject cursor-pointer">
+                <source srcSet={`/${project.image}.webp`} type="image/webp" />
+                <source srcSet={`/${project.image}.png`} type="image/png" />
+                <img
+                  src={`/${project.image}.png`}
+                  alt={project.image}
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+              </picture>
+              <video
                 className="homeVidProject cursor-pointer"
                 preload="none"
                 muted
                 autoPlay
-              />
+                playsInline
+              >
+                <source src={`/${project.video}.webm`} type="video/webm" />
+                <source src={`/${project.video}.mp4`} type="video/mp4" />
+              </video>
             </div>
             <div className="flex flex-col md:gap-1 gap-0">
               <p className="text-xl text-gray-400">{project.subtitle}</p>

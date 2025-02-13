@@ -2,7 +2,6 @@ import { useParams } from "react-router-dom";
 import { projects } from "../../../constants/Projects";
 import { useGSAP } from "@gsap/react";
 import { animateWithGsap } from "../../../utils/animations";
-import { AdvancedImage } from "@cloudinary/react";
 
 interface Params {
   [key: string]: string | undefined;
@@ -40,11 +39,15 @@ const Credits = () => {
             ))}
         </div>
       </div>
-      <AdvancedImage
-        cldImg={project.team}
-        className="gsap lg:w-[65%] w-full lg:rounded-3xl rounded-2xl border-2 border-gray-50"
-        alt=""
-      />
+      <picture className="gsap lg:w-[65%] w-full lg:rounded-3xl rounded-2xl border-2 border-gray-50 overflow-hidden">
+        <source srcSet={`/${project.team}.webp`} type="image/webp" />
+        <source srcSet={`/${project.team}.png`} type="image/png" />
+        <img
+          src={`/${project.team}.png`}
+          className="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </picture>
     </section>
   );
 };
