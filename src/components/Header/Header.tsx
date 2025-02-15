@@ -84,6 +84,7 @@ const Header: React.FC<MenuProps> = ({ menu, setMenu }) => {
           <RiveComponent
             className="w-[167px] h-[23px] cursor-pointer"
             onMouseEnter={handleMouseEnter}
+            onClick={() => setMenu(false)}
           />
         </Link>
         <div className="gap-12 sm:flex hidden">

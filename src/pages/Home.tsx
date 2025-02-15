@@ -1,10 +1,10 @@
 import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
 import Footer from "../components/Footer/Footer";
 import About from "../components/Home/About/About";
 import Hero from "../components/Home/Hero/Hero";
 import Projects from "../components/Home/Projects/Projects";
 import { motion as m } from "framer-motion";
+import { animateMenuClose, animateMenuOpen } from "../utils/animations";
 
 interface MenuProps {
   menu: boolean;
@@ -13,18 +13,9 @@ interface MenuProps {
 const Home: React.FC<MenuProps> = ({ menu }) => {
   useGSAP(() => {
     if (menu) {
-      // Ensure the element is present before animating
-      gsap.to(".page", {
-        transform: "translateY(50vh)",
-        duration: 1.5,
-        ease: "power4.out",
-      });
+      animateMenuOpen(".page");
     } else {
-      gsap.to(".page", {
-        transform: "translateY(0vh)",
-        duration: 1.5,
-        ease: "power4.out",
-      });
+      animateMenuClose(".page");
     }
   }, [menu]);
 

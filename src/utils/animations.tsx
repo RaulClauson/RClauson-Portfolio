@@ -3,9 +3,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
-// Variável para controlar se é a primeira visita
-let isFirstVisitHeader = true; // Inicialmente assumimos que é a primeira visita
-let isFirstVisit = true; // Inicialmente assumimos que é a primeira visita
+let isFirstVisitHeader = true;
+let isFirstVisit = true;
 
 export const headerAnimateWithGsap = (target: string) => {
   // Define o delay com base na variável isFirstVisit
@@ -28,8 +27,8 @@ export const headerAnimateWithGsap = (target: string) => {
     });
   }
 };
+
 export const heroAnimateWithGsap = (target: string, stagger?: number) => {
-  // Define o delay com base na variável isFirstVisit
   const delay = isFirstVisit ? 2.95 : 0.3;
   gsap.to(target, {
     translateY: 0,
@@ -40,13 +39,13 @@ export const heroAnimateWithGsap = (target: string, stagger?: number) => {
     stagger: stagger || 0.2,
     ease: "power4.out",
     onComplete: () => {
-      // Se for a primeira visita, seta a variável para false, pra que não tenha delay em próximas animações
       if (isFirstVisit) {
         isFirstVisit = false;
       }
     },
   });
 };
+
 export const heroAboutAnimateWithGsap = (target: string, target2: string) => {
   const delay = isFirstVisit ? 2.95 : 0.3;
   gsap.to(target, {
@@ -86,6 +85,21 @@ export const heroAboutAnimateWithGsap = (target: string, target2: string) => {
   });
 };
 
+export const animateMenuOpen = (target: string) => {
+  gsap.to(target, {
+    transform: "translateY(50vh)",
+    duration: 1.5,
+    ease: "power4.out",
+  });
+};
+export const animateMenuClose = (target: string) => {
+  gsap.to(target, {
+    transform: "translateY(0vh)",
+    duration: 1.5,
+    ease: "power4.out",
+  });
+};
+
 export const animateWithGsap = (target: string) => {
   gsap.to(target, {
     translateY: 0,
@@ -116,7 +130,6 @@ export const animateVideoWithGsap = (
     opacity: 1,
     ease: "power2",
   });
-
   gsap.to(imgElement, {
     scrollTrigger: {
       trigger: imgElement,
@@ -127,14 +140,12 @@ export const animateVideoWithGsap = (
     duration: 2,
     ease: "power2",
   });
-
   imgElement.addEventListener("mouseenter", () => {
     gsap.to(imgElement, {
       filter: "blur(25px)",
       duration: 0.5,
       ease: "power3.out",
     });
-
     gsap.to(vidElement, {
       filter: "blur(0px)",
       scale: 1,
@@ -148,14 +159,12 @@ export const animateVideoWithGsap = (
       },
     });
   });
-
   imgElement.addEventListener("mouseleave", () => {
     gsap.to(imgElement, {
       filter: "blur(0px)",
       duration: 0.5,
       ease: "power3.out",
     });
-
     gsap.to(vidElement, {
       filter: "blur(25px)",
       scale: 1.5,

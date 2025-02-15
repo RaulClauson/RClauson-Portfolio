@@ -1,6 +1,5 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { animateWithGsap } from "../../utils/animations";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 interface MenuProps {
   menu: boolean;
@@ -14,7 +13,6 @@ const Menu: React.FC<MenuProps> = ({ menu, setMenu }) => {
 
   useGSAP(() => {
     if (menu) {
-      animateWithGsap(".gsap");
       gsap.to(".Menu", {
         top: "0vh",
         duration: 1.5,

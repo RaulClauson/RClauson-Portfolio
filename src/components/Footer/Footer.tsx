@@ -39,7 +39,7 @@ const Footer = () => {
       numberInput.value = randomValue; // Atualizar o valor no Rive
       setLastValue(randomValue); // Armazenar o novo valor como último gerado
 
-      setIsCooldown(true); // Ativar cooldown
+      setIsCooldown(true);
       setTimeout(() => {
         setIsCooldown(false); // Reativar após 2 segundos
       }, 2000);
