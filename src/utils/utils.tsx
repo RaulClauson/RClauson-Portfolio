@@ -14,22 +14,22 @@ export const vidProject4 = "media/Videos/blue";
 export const vidProject5 = "media/Videos/sabordobem";
 
 // CLOUDINARY
-export const heroVideo = createVideo("Portfolio/Videos/ohkmcmi1hvidtp0fvzbn");
+export const heroVideo = createVideo("Portfolio/Videos/wwito8ryu24g42mt8csa");
 export const smallHeroVideo = createVideo(
-  "Portfolio/Videos/b2klaztpvdbozqeefjau"
+  "Portfolio/Videos/vxuip89hjngorkrswir8"
 );
 export const vaptPitch = createVideo(
-  "Portfolio/Vapt-Vupt/dldtuigtvr5kf2mydo0n"
+  "Portfolio/Vapt-Vupt/drt1rwpkm4tka7qqa8lk"
 );
 export const friendlyPitch = createVideo(
-  "Portfolio/Friendly/q3jos6vxtxfnvoipfdbc"
+  "Portfolio/Friendly/qouq4qvcf5pilmt0imdl"
 );
-export const energPitch = createVideo("Portfolio/Energia/czyui1mldvmimjcwspnr");
+export const energPitch = createVideo("Portfolio/Energia/u2voh5fba4kahvjjwuvf");
 export const bluePitch = createVideo(
-  "Portfolio/BlueGuardians/hafkvxz2c0tg4oygdxdq"
+  "Portfolio/BlueGuardians/nshrpnvpwlejsdqasyju"
 );
 export const saborPitch = createVideo(
-  "Portfolio/Sabordobem/ohm5gr2aska7r3czoyrt"
+  "Portfolio/Sabordobem/leqjiqhxjbljllnqcqxy"
 );
 
 // Credits
