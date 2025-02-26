@@ -63,7 +63,7 @@ const Media = () => {
             <source src={`/media/${project.id}/mobile.png`} type="image/png" />
             <img
               src={`/media/${project.id}/mobile.png`}
-              className="h-fit object-cover"
+              className="w-full h-fit object-cover"
               loading="lazy"
               alt="Landing page"
               onLoad={handleImageLoad}
@@ -74,7 +74,7 @@ const Media = () => {
             <source src={`/media/${project.id}/desk.png`} type="image/png" />
             <img
               src={`/media/${project.id}/desk.png`}
-              className="h-fit object-cover"
+              className="w-full h-fit object-cover"
               alt="Landing page"
               onLoad={handleImageLoad}
               loading="lazy"
