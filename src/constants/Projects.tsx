@@ -25,7 +25,6 @@ export const projects = [
       "Aplicativo mobile desenvolvido para monitoramento e resposta a desastres naturais.",
     image: imgProject6,
     video: vidProject6,
-    link: "https://vapt-vupt.vercel.app/",
     year: "(2025) Mai - Jun",
     youtube:
       "https://www.youtube.com/embed/Y2QoEzdn1y0?si=1TVnrknj04tAR8Ah&amp;",

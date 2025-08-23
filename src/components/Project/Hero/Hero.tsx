@@ -130,13 +130,15 @@ const Hero = () => {
                 </p>
               </div>
             </div>
-            <a
-              href={project?.link}
-              className="hero projectText flex gap-2 text-2xl link link--metis w-fit"
-            >
-              Visitar Projeto
-              <ExternalLink strokeWidth={2.5} />
-            </a>
+            {project?.link && (
+              <a
+                href={project?.link}
+                className="hero projectText flex gap-2 text-2xl link link--metis w-fit"
+              >
+                Visitar Projeto
+                <ExternalLink strokeWidth={2.5} />
+              </a>
+            )}
           </div>
           <div
             id="heroVideo"
