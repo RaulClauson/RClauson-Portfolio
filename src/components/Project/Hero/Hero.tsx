@@ -3,10 +3,7 @@ import { projects } from "../../../constants/Projects";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { heroAnimateWithGsap } from "../../../utils/animations";
-import { ChevronDown, ExternalLink, Pause, Play } from "lucide-react";
-import { useEffect, useState, useRef } from "react";
-import { AdvancedVideo } from "@cloudinary/react";
-import { AdvancedVideo as AdvancedVideoComponent } from "@cloudinary/react";
+import { ChevronDown, ExternalLink } from "lucide-react";
 
 interface Params {
   [key: string]: string | undefined;
@@ -16,9 +13,6 @@ interface Params {
 const Hero = () => {
   const { id } = useParams<Params>();
   const project = projects.find((p) => p.id === id);
-
-  const [isPlaying, setIsPlaying] = useState(true);
-  const videoRef = useRef<AdvancedVideoComponent | null>(null); // Ref for the AdvancedVideo component
 
   useGSAP(() => {
     heroAnimateWithGsap(".hero", 0.1);
@@ -100,55 +94,7 @@ const Hero = () => {
     });
   };
 
-  const handleVideoClick = async () => {
-    if (!videoRef.current?.videoRef.current) return;
-
-    const video = videoRef.current.videoRef.current;
-
-    if (document.fullscreenElement) {
-      await document.exitFullscreen();
-      video.style.objectFit = "cover";
-      video.muted = true;
-      video.controls = false;
-    } else {
-      video.muted = false;
-      video.currentTime = 0;
-      video.controls = true;
-      video.style.objectFit = "contain";
-      await video.requestFullscreen();
-      video.play();
-    }
-  };
-
-  const handlePauseButton = () => {
-    if (!videoRef.current?.videoRef.current) return;
-    const video = videoRef.current.videoRef.current;
-    if (isPlaying) {
-      video.pause();
-    } else {
-      video.play();
-    }
-    setIsPlaying(!isPlaying);
-  };
-
-  useEffect(() => {
-    const handleFullscreenChange = () => {
-      if (!videoRef.current?.videoRef.current) return;
-      const video = videoRef.current.videoRef.current;
-      if (!document.fullscreenElement) {
-        video.muted = true;
-        video.controls = false;
-        video.style.objectFit = "cover"; // ensure it goes back to cover
-      }
-    };
-
-    document.addEventListener("fullscreenchange", handleFullscreenChange);
-    return () => {
-      document.removeEventListener("fullscreenchange", handleFullscreenChange);
-    };
-  }, []);
-
-  if (!project?.pitch) return null;
+  if (!project?.video) return null;
 
   return (
     <section className="gsapRef w-full h-[200svh]">
@@ -194,41 +140,33 @@ const Hero = () => {
           </div>
           <div
             id="heroVideo"
-            className="hero heroVideo relative w-full h-full z-0 lg:rounded-2xl !rounded-2xl overflow-hidden border-2 border-gray-50"
+            className="hero heroVideo relative w-full h-full z-0 lg:rounded-2xl !rounded-2xl overflow-hidden border-2 border-gray-50 aspect-video! min-h-32"
           >
-            <AdvancedVideo
-              cldVid={project?.pitch}
-              ref={videoRef}
-              className="w-full h-full object-cover cursor-pointer"
-              autoPlay
-              muted
-              loop
-              playsInline={true}
-              onClick={handleVideoClick}
-            />
-            <source type="video/mp4" />
-            <div
-              className="absolute bottom-3 right-3 z-10 text-gray cursor-pointer text-2xl"
-              onClick={handlePauseButton}
-            >
-              {isPlaying ? (
-                <Pause strokeWidth={2.5} />
-              ) : (
-                <Play strokeWidth={2.5} />
-              )}
-            </div>
             <a
-              href={project.youtube}
-              className="!absolute bottom-3 left-3 z-10 text-gray text-xl link link--metis flex items-center gap-2"
+              href={project?.youtubeLink}
+              className="absolute inset-0 flex items-center justify-center aspect-video! pointer-events-auto cursor-pointer"
             >
-              YouTube
+              <iframe
+                className="absolute min-w-full min-h-full w-auto h-auto aspect-video! pointer-events-none"
+                style={{
+                  left: "50%",
+                  top: "50%",
+                  transform: "translate(-50%, -50%)",
+                  aspectRatio: "16/9",
+                }}
+                src={`${project?.youtube}&controls=0&autoplay=1&loop=0&mute=1&modestbranding=1&showinfo=0`}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              ></iframe>
             </a>
           </div>
         </div>
         <div className="absolute heroBottom bottom-0 left-0 w-full common-py flex items-center justify-between">
           <p className="hero text-xl text-gray">{project?.year}</p>
           <a
-            href=""
             onClick={scrollToAbout}
             className="hero flex gap-1 text-gray text-xl cursor-pointer"
           >

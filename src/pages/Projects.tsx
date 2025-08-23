@@ -68,7 +68,7 @@ const Projects: React.FC = () => {
 
       const repeatedProjects = [
         ...projects,
-        ...projects.slice(0, projects.length - 1), // Exclude last item
+        ...projects.slice(0, projects.length - 2), // Exclude last item ! quanto mais projetos mais exclusões
       ];
       setDisplayProjects(repeatedProjects);
 

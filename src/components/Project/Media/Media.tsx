@@ -24,10 +24,10 @@ const Media = () => {
   useLayoutEffect(() => {
     if (imagesLoaded && imagesContainerRef.current) {
       const containerHeight = imagesContainerRef.current.offsetHeight;
-      // Check if the height exceeds 300svh, taking into consideration the header height.
+      // Check if the height exceeds 300svh and we're not in mobile view
       setShowExpandButton(
-        containerHeight > (300 * window.innerHeight) / 100 - 80 ||
-          window.innerWidth < 1024
+        containerHeight > (300 * window.innerHeight) / 100 - 80 &&
+          window.innerWidth >= 1024
       );
     }
   }, [imagesLoaded, expand]);

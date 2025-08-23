@@ -12,14 +12,38 @@ import {
   LeoMi,
   Sabordobem,
   Friendly,
-  vaptPitch,
-  friendlyPitch,
-  energPitch,
-  bluePitch,
-  saborPitch,
+  imgProject6,
+  vidProject6,
 } from "../utils/utils";
 
 export const projects = [
+  {
+    id: "Weatherman",
+    title: "Weatherman",
+    subtitle: "(Global Solution 3 - FIAP)",
+    description:
+      "Aplicativo mobile desenvolvido para monitoramento e resposta a desastres naturais.",
+    image: imgProject6,
+    video: vidProject6,
+    link: "https://vapt-vupt.vercel.app/",
+    year: "(2025) Mai - Jun",
+    youtube:
+      "https://www.youtube.com/embed/Y2QoEzdn1y0?si=1TVnrknj04tAR8Ah&amp;",
+    youtubeLink: "https://youtu.be/Y2QoEzdn1y0?si=hoQ_km6kLvUTqkVf",
+    credits: [
+      { name: "Leonardo Botelho", work: "Dev Back-End" },
+      { name: "Mirian Bronzati", work: "Dev IOT" },
+    ],
+    services: [
+      "Mobile Development",
+      "Mobile Design",
+      "Branding",
+      "Motion Design",
+      "Video Editing",
+    ],
+    /* media */
+    team: LeoMi,
+  },
   {
     id: "Vapt-Vupt",
     title: "Vapt-Vupt",
@@ -30,7 +54,9 @@ export const projects = [
     video: vidProject1,
     link: "https://vapt-vupt.vercel.app/",
     year: "(2024) Fev - Nov",
-    youtube: "https://www.youtube.com/@Vapt-Vupt_Challenge",
+    youtube:
+      "https://www.youtube.com/embed/ZoeoYKEFKxc?si=YXOGtXvaPHfnGYOE&amp;",
+    youtubeLink: "https://youtu.be/ZoeoYKEFKxc?si=DDk0uskeG07Gyc60",
     credits: [
       { name: "Leonardo Botelho", work: "Dev Back-End" },
       { name: "Mirian Bronzati", work: "Dev IA" },
@@ -44,7 +70,6 @@ export const projects = [
     ],
     /* media */
     team: LeoMi,
-    pitch: vaptPitch,
   },
   {
     id: "Friendly",
@@ -56,7 +81,9 @@ export const projects = [
     video: vidProject2,
     link: "https://reco-facial-friendly.vercel.app/",
     year: "(2024) Fev - Out",
-    youtube: "https://www.youtube.com/@friendly2024",
+    youtube:
+      "https://www.youtube.com/embed/LBe3a5OFCg0?si=74ASJCB7c4arReGL&amp;",
+    youtubeLink: "https://youtu.be/LBe3a5OFCg0?si=2L7mshrJMWV0QFGE",
     credits: [
       { name: "Henrique Franco", work: "Auxiliar de projeto" },
       { name: "Humberto Vitalino", work: "Dev IA" },
@@ -73,7 +100,6 @@ export const projects = [
     ],
     /* media */
     team: Friendly,
-    pitch: friendlyPitch,
   },
   {
     id: "Energia",
@@ -85,7 +111,9 @@ export const projects = [
     video: vidProject3,
     link: "https://gs-sigma.vercel.app/",
     year: "(2024) Nov",
-    youtube: "https://www.youtube.com/@Energia-o7u",
+    youtube:
+      "https://www.youtube.com/embed/Zjjp2_3XYBk?si=QhYHwByzwpiEfDXJ&amp;",
+    youtubeLink: "https://youtu.be/Zjjp2_3XYBk?si=iH_ADFi7fMZ2Qw_d",
     credits: [
       { name: "Leonardo Botelho", work: "Dev Back-End" },
       { name: "Mirian Bronzati", work: "Dev IA" },
@@ -99,7 +127,6 @@ export const projects = [
     ],
     /* media */
     team: LeoMi,
-    pitch: energPitch,
   },
   {
     id: "BlueGuardians",
@@ -111,7 +138,9 @@ export const projects = [
     video: vidProject4,
     link: "https://global-solution-olive.vercel.app/",
     year: "(2024) Jun",
-    youtube: "https://www.youtube.com/@BlueGuardiansGS",
+    youtube:
+      "https://www.youtube.com/embed/gldTg4ULAgU?si=W5pKunFSsEEiRqK1&amp;",
+    youtubeLink: "https://youtu.be/gldTg4ULAgU?si=N4aUTmjNSCQPG90B",
     credits: [
       { name: "Leonardo Botelho", work: "Dev Back-End" },
       { name: "Mirian Bronzati", work: "Dev IA" },
@@ -125,7 +154,6 @@ export const projects = [
     ],
     /* media */
     team: LeoMi,
-    pitch: bluePitch,
   },
   {
     id: "Sabordobem",
@@ -137,7 +165,9 @@ export const projects = [
     video: vidProject5,
     link: "https://sabordobem.vercel.app/",
     year: "(2023) Fev - Nov",
-    youtube: "https://www.youtube.com/@SabordoBemTCC",
+    youtube:
+      "https://www.youtube.com/embed/ZoeoYKEFKxc?si=B3IckBFDdnNKUJbr&amp;",
+    youtubeLink: "https://youtu.be/cyC4bfGFdEI?si=lG2Q1lcZe846Ws8Q",
     credits: [
       { name: "Leonardo Andorni", work: "Dev Mobile" },
       { name: "Lorenzo Augusto", work: "Auxiliar de projeto" },
@@ -153,6 +183,5 @@ export const projects = [
     ],
     /* media */
     team: Sabordobem,
-    pitch: saborPitch,
   },
 ];
