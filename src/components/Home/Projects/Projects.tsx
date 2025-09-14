@@ -50,7 +50,7 @@ const Projects = () => {
             className="flex flex-col md:gap-4 gap-2 project-item"
           >
             <div className="flex flex-center overflow-hidden rounded-2xl relative">
-              <picture>
+              <picture className="w-full object-cover">
                 <source srcSet={`/${project.image}.webp`} type="image/webp" />
                 <source srcSet={`/${project.image}.png`} type="image/png" />
                 <img
