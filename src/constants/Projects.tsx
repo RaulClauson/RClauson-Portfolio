@@ -165,7 +165,7 @@ export const projects = [
     link: "https://sabordobem.vercel.app/",
     year: "(2023) Fev - Nov",
     youtube:
-      "https://www.youtube.com/embed/ZoeoYKEFKxc?si=B3IckBFDdnNKUJbr&amp;",
+      "https://www.youtube.com/embed/cyC4bfGFdEI?si=lG2Q1lcZe846Ws8Q&amp;",
     youtubeLink: "https://youtu.be/cyC4bfGFdEI?si=lG2Q1lcZe846Ws8Q",
     credits: [
       { name: "Leonardo Andorni", work: "Dev Mobile" },
