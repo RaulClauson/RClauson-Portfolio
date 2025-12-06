@@ -5,7 +5,7 @@ import gsap from "gsap";
 import { heroAnimateWithGsap } from "../../../utils/animations";
 import { ChevronDown, Pause, Play } from "lucide-react";
 import { useEffect, useState, useRef } from "react";
-import { heroVideo, smallHeroVideo } from "../../../utils/utils";
+import { heroVideo, smallHeroVideo } from "../../../constants/media";
 import {
   AdvancedVideo,
   AdvancedVideo as AdvancedVideoComponent,

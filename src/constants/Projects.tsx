@@ -14,9 +14,43 @@ import {
   Friendly,
   imgProject6,
   vidProject6,
-} from "../utils/utils";
+} from "./media";
 
 export const projects = [
+  {
+    id: "Labubonico",
+    title: "Labubonico",
+    subtitle: "(Checkpoint IA - FIAP)",
+    description:
+      "Um aplicativo inteligente de gestão financeira pessoal que utiliza IA para automatizar o controle de despesas através de análise de documentos e conversação natural.",
+    image: imgProject6,
+    video: vidProject6,
+    year: "(2025) Out - Out",
+    youtube:
+      "https://www.youtube.com/embed/Y2QoEzdn1y0?si=1TVnrknj04tAR8Ah&amp;",
+    youtubeLink: "https://youtu.be/Y2QoEzdn1y0?si=hoQ_km6kLvUTqkVf",
+    credits: [
+      { name: "Leonardo Botelho", work: "Dev Back-End" },
+      { name: "Mirian Bronzati", work: "Dev IA" },
+    ],
+    skills: [
+      "React Native",
+      "Expo",
+      "Typescript",
+      "CSS",
+      "Firebase",
+      "Firebase AI Logic",
+    ],
+    services: [
+      "Mobile Development",
+      "Mobile Design",
+      "Branding",
+      "Motion Design",
+      "Video Editing",
+    ],
+    /* media */
+    team: LeoMi,
+  },
   {
     id: "Weatherman",
     title: "Weatherman",
@@ -33,6 +67,7 @@ export const projects = [
       { name: "Leonardo Botelho", work: "Dev Back-End" },
       { name: "Mirian Bronzati", work: "Dev IOT" },
     ],
+    skills: ["React Native", "Typescript", "Tailwind CSS", "Java", ".Net"],
     services: [
       "Mobile Development",
       "Mobile Design",
@@ -60,6 +95,7 @@ export const projects = [
       { name: "Leonardo Botelho", work: "Dev Back-End" },
       { name: "Mirian Bronzati", work: "Dev IA" },
     ],
+    skills: ["React", "Next.js", "Typescript", "CSS"],
     services: [
       "Web Development",
       "Web Design",
@@ -90,6 +126,7 @@ export const projects = [
       { name: "Leonardo Botelho", work: "Dev Back-End" },
       { name: "Nicollas Guedes", work: "Líder do Projeto" },
     ],
+    skills: ["React", "Vite", "JavaScript", "CSS"],
     services: [
       "Web Development",
       "Web Design",
@@ -117,6 +154,7 @@ export const projects = [
       { name: "Leonardo Botelho", work: "Dev Back-End" },
       { name: "Mirian Bronzati", work: "Dev IA" },
     ],
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
     services: [
       "Web Development",
       "Web Design",
@@ -144,6 +182,7 @@ export const projects = [
       { name: "Leonardo Botelho", work: "Dev Back-End" },
       { name: "Mirian Bronzati", work: "Dev IA" },
     ],
+    skills: ["HTML", "CSS", "JavaScript"],
     services: [
       "Web Development",
       "Web Design",
@@ -173,6 +212,7 @@ export const projects = [
       { name: "Lucas Roque", work: "Dev Mobile" },
       { name: "Mariana Nikaido", work: "Documentação" },
     ],
+    skills: ["HTML", "CSS", "JavaScript"],
     services: [
       "Web Development",
       "Web Design",

@@ -1,5 +1,5 @@
 import { useRive, useStateMachineInput } from "@rive-app/react-canvas";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { headerAnimateWithGsap } from "../../utils/animations";
@@ -16,6 +16,7 @@ const Header: React.FC<MenuProps> = ({ menu, setMenu }) => {
   const INPUT_NAME = "Number"; // Nome da entrada usada no Rive
   const location = useLocation();
   const navigate = useNavigate();
+  const lastScrollY = useRef(0);
 
   const { rive, RiveComponent } = useRive({
     src: "/rive/Animation_white.riv", // Substitua pelo caminho do arquivo .riv
@@ -57,6 +58,52 @@ const Header: React.FC<MenuProps> = ({ menu, setMenu }) => {
     headerAnimateWithGsap(".header");
   }, []);
 
+  const isNavVisible = useRef(true);
+
+  // Animação de scroll do header
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      // Scrolling down
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        if (isNavVisible.current) {
+          gsap.to(".gsap-item", {
+            y: "-500%",
+            stagger: 0.1,
+            duration: 0.6,
+            ease: "power1.in",
+            overwrite: true,
+          });
+
+          isNavVisible.current = false;
+        }
+      }
+      // Scrolling up
+      else if (currentScrollY < lastScrollY.current) {
+        if (!isNavVisible.current) {
+          gsap.to(".gsap-item", {
+            y: "0%",
+            stagger: 0.1,
+            duration: 0.6,
+            ease: "power1.out",
+            overwrite: true,
+          });
+          handleMouseEnter();
+          isNavVisible.current = true;
+        }
+      }
+
+      lastScrollY.current = currentScrollY;
+    };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [handleMouseEnter]);
+
   const scrollToFooter = (e: React.MouseEvent) => {
     e.preventDefault();
     if (location.pathname === "/Projetos") {
@@ -80,7 +127,7 @@ const Header: React.FC<MenuProps> = ({ menu, setMenu }) => {
   return (
     <header className="header fixed top-0 left-0 w-full common-padding z-50 mix-blend-difference text-white">
       <nav className="navbar">
-        <Link to="/">
+        <Link to="/" className="gsap-item">
           <RiveComponent
             className="w-[167px] h-[23px] cursor-pointer"
             onMouseEnter={handleMouseEnter}
@@ -88,21 +135,21 @@ const Header: React.FC<MenuProps> = ({ menu, setMenu }) => {
           />
         </Link>
         <div className="gap-12 sm:flex hidden">
-          <Link to="/Projetos" className="link link--metis">
+          <Link to="/Projetos" className="link link--metis gsap-item">
             Projetos
           </Link>
-          <Link to="/Sobre" className="link link--metis">
+          <Link to="/Sobre" className="link link--metis gsap-item">
             Sobre
           </Link>
         </div>
         <button
           onClick={scrollToFooter}
-          className="lg:w-[167px] w-auto justify-end cursor-pointer sm:flex hidden"
+          className="lg:w-[167px] w-auto justify-end cursor-pointer sm:flex hidden gsap-item"
         >
           Contato
         </button>
         <button
-          className="flex-center gap-1 sm:hidden flex"
+          className="flex-center gap-1 sm:hidden flex gsap-item"
           onClick={() => setMenu(!menu)}
         >
           {menu ? (

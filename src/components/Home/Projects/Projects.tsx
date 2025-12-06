@@ -4,7 +4,7 @@ import {
   animateVideoWithGsap,
   animateWithGsap,
 } from "../../../utils/animations";
-import { imgProject1 } from "../../../utils/utils";
+import { imgProject1 } from "../../../constants/media";
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
