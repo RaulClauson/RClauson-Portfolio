@@ -47,8 +47,6 @@ export const projects = [
       "Motion Design",
       "Video Editing",
     ],
-    /* media */
-    team: LeoMi,
   },
   {
     id: "MottuVision",
@@ -110,8 +108,6 @@ export const projects = [
       "Motion Design",
       "Video Editing",
     ],
-    /* media */
-    team: LeoMi,
   },
   {
     id: "Weatherman",

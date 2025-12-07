@@ -36,15 +36,17 @@ const Credits = () => {
             ))}
         </div>
       </div>
-      <picture className={style.picture}>
-        <source srcSet={`/${project.team}.webp`} type="image/webp" />
-        <source srcSet={`/${project.team}.png`} type="image/png" />
-        <img
-          src={`/${project.team}.png`}
-          className={style.image}
-          loading="lazy"
-        />
-      </picture>
+      {project.team && (
+        <picture className={style.picture}>
+          <source srcSet={`/${project.team}.webp`} type="image/webp" />
+          <source srcSet={`/${project.team}.png`} type="image/png" />
+          <img
+            src={`/${project.team}.png`}
+            className={style.image}
+            loading="lazy"
+          />
+        </picture>
+      )}
     </section>
   );
 };
