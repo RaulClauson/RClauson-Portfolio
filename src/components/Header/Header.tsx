@@ -1,10 +1,10 @@
-import { useRive, useStateMachineInput } from "@rive-app/react-canvas";
-import { useState, useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { headerAnimateWithGsap } from "../../utils/animations";
 import { AlignJustify, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import RiveLogoAnimation from "../RiveLogoAnimation";
 
 interface MenuProps {
   menu: boolean;
@@ -12,47 +12,9 @@ interface MenuProps {
 }
 
 const Header: React.FC<MenuProps> = ({ menu, setMenu }) => {
-  const STATE_MACHINE_NAME = "State Machine 1"; // Nome da sua State Machine
-  const INPUT_NAME = "Number"; // Nome da entrada usada no Rive
   const location = useLocation();
   const navigate = useNavigate();
   const lastScrollY = useRef(0);
-
-  const { rive, RiveComponent } = useRive({
-    src: "/rive/Animation_white.riv", // Substitua pelo caminho do arquivo .riv
-    stateMachines: STATE_MACHINE_NAME,
-    autoplay: true,
-  });
-
-  // Controlar o input "Number" da State Machine
-  const numberInput = useStateMachineInput(
-    rive,
-    STATE_MACHINE_NAME,
-    INPUT_NAME
-  );
-
-  // Estado para controlar a ativação do random value
-  const [isCooldown, setIsCooldown] = useState(false);
-  const [lastValue, setLastValue] = useState<number | null>(null);
-
-  const handleMouseEnter = () => {
-    if (numberInput && !isCooldown) {
-      let randomValue: number;
-
-      // Gerar um novo valor que seja diferente do último
-      do {
-        randomValue = Math.floor(Math.random() * 3) + 1; // Random value between 1 and 3
-      } while (randomValue === lastValue);
-
-      numberInput.value = randomValue; // Atualizar o valor no Rive
-      setLastValue(randomValue); // Armazenar o novo valor como último gerado
-
-      setIsCooldown(true); // Ativar cooldown
-      setTimeout(() => {
-        setIsCooldown(false); // Reativar após 2 segundos
-      }, 2000);
-    }
-  };
 
   useGSAP(() => {
     headerAnimateWithGsap(".header");
@@ -89,7 +51,6 @@ const Header: React.FC<MenuProps> = ({ menu, setMenu }) => {
             ease: "power1.out",
             overwrite: true,
           });
-          handleMouseEnter();
           isNavVisible.current = true;
         }
       }
@@ -102,7 +63,7 @@ const Header: React.FC<MenuProps> = ({ menu, setMenu }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [handleMouseEnter]);
+  }, []);
 
   const scrollToFooter = (e: React.MouseEvent) => {
     e.preventDefault();
@@ -127,12 +88,12 @@ const Header: React.FC<MenuProps> = ({ menu, setMenu }) => {
   return (
     <header className="header fixed top-0 left-0 w-full common-padding z-50 mix-blend-difference text-white">
       <nav className="navbar">
-        <Link to="/" className="gsap-item">
-          <RiveComponent
-            className="w-[167px] h-[23px] cursor-pointer"
-            onMouseEnter={handleMouseEnter}
-            onClick={() => setMenu(false)}
-          />
+        <Link
+          to="/"
+          className="w-[167px] h-[23px] gsap-item"
+          onClick={() => setMenu(false)}
+        >
+          <RiveLogoAnimation />
         </Link>
         <div className="gap-12 sm:flex hidden">
           <Link to="/Projetos" className="link link--metis gsap-item">
