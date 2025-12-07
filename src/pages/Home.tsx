@@ -1,8 +1,8 @@
 import { useGSAP } from "@gsap/react";
-import Footer from "../components/Footer/Footer";
-import About from "../components/Home/About/About";
-import Hero from "../components/Home/Hero/Hero";
-import Projects from "../components/Home/Projects/Projects";
+import Footer from "../components/layout/Footer";
+import About from "../components/home/About";
+import Hero from "../components/home/Hero";
+import Projects from "../components/common/Projects";
 import { motion as m } from "framer-motion";
 import { animateMenuClose, animateMenuOpen } from "../utils/animations";
 

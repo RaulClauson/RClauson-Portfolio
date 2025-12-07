@@ -1,7 +1,7 @@
 import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
-import useLenis from "./utils/LenisWrapper";
+import useLenis from "./hooks/useLenis";
 import { AnimatePresence } from "framer-motion";
 import About from "./pages/About";
 import { useEffect } from "react";

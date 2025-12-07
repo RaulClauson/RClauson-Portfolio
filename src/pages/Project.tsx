@@ -1,11 +1,11 @@
 import { useGSAP } from "@gsap/react";
 import { motion as m } from "framer-motion";
-import Hero from "../components/Project/Hero/Hero";
-import Media from "../components/Project/Media/Media";
-import Footer from "../components/Footer/Footer";
-import Credits from "../components/Project/Credits/Credits";
-import Next from "../components/Project/Next/Next";
+import Hero from "../components/project/Hero";
+import Media from "../components/project/Media";
+import Footer from "../components/layout/Footer";
+import Credits from "../components/project/Credits";
 import { animateMenuClose, animateMenuOpen } from "../utils/animations";
+import Projects from "../components/common/Projects";
 
 interface MenuProps {
   menu: boolean;
@@ -33,7 +33,7 @@ const Project: React.FC<MenuProps> = ({ menu }) => {
         <Media />
         <Credits />
       </div>
-      <Next />
+      <Projects />
       <Footer />
     </m.main>
   );
