@@ -51,7 +51,7 @@ const RiveLogoAnimation = () => {
 
   return (
     <RiveComponent
-      className="w-full aspect-[19/4] cursor-pointer mix-blend-difference"
+      className="w-full aspect-[19/4] mix-blend-difference"
       onMouseEnter={handleMouseEnter}
     />
   );

@@ -90,7 +90,7 @@ const Header: React.FC<MenuProps> = ({ menu, setMenu }) => {
       <nav className="navbar">
         <Link
           to="/"
-          className="w-[167px] h-[23px] gsap-item"
+          className="w-[167px] h-[23px] gsap-item cursor-pointer"
           onClick={() => setMenu(false)}
         >
           <RiveLogoAnimation />

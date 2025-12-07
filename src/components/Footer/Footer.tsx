@@ -82,9 +82,12 @@ const Footer = () => {
         </ul>
       </div>
       <div className="w-full flex justify-between items-end gap-6">
-        <div className="sm:w-[500px] w-full sm:h-[115px] h-auto">
+        <Link
+          to="/"
+          className="sm:w-[500px] w-full sm:h-[115px] cursor-pointer"
+        >
           <RiveLogoAnimation />
-        </div>
+        </Link>
         <a
           href="#"
           className="text-2xl link link--metis flex flex-center flex-shrink-0 md:gap-2 gap-0"
