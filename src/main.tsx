@@ -3,11 +3,11 @@ import { StrictMode, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
-import Header from "./components/Header/Header.tsx";
-import PageLoading from "./components/PageLoading/PageLoading.tsx";
-import CustomCursor from "./components/CustomCursor/CustomCursor.tsx";
+import Header from "./components/layout/Header.tsx";
+import PageLoading from "./components/common/PageLoading.tsx";
+import CustomCursor from "./components/common/CustomCursor.tsx";
 import { BrowserRouter } from "react-router-dom";
-import Menu from "./components/Menu/Menu.tsx";
+import Menu from "./components/layout/Menu.tsx";
 
 export function Root() {
   /*   const location = useLocation(); */

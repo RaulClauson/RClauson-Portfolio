@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
-import { projects } from "../../../constants/Projects";
+import { projects } from "../../constants/Projects";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { heroAnimateWithGsap } from "../../../utils/animations";
+import { heroAnimateWithGsap } from "../../utils/animations";
 import { ChevronDown, ExternalLink } from "lucide-react";
 
 interface Params {
@@ -97,59 +97,41 @@ const Hero = () => {
   if (!project?.video) return null;
 
   return (
-    <section className="gsapRef w-full h-[200svh]">
-      <div className="gsapPin w-full h-[100svh] flex flex-center relative">
-        <div className="projectHero w-full md:h-[65vh] h-auto flex lg:flex-row flex-col lg:items-center items-start justify-between lg:gap-16 md:gap-11 sm:gap-6 gap-6">
-          <div className="projectTexts ml-0 max-w-[600px] w-full flex flex-col lg:gap-16 md:gap-11 sm:gap-6 gap-6 flex-shrink-0">
-            <div className="flex flex-col md:gap-1 gap-0">
-              <h1 className="hero projectText text-8xl flex-shrink-0">
-                {project?.title}
-              </h1>
-              <p className="hero projectText text-2xl text-gray-400 md:pb-2 pb-0 flex-shrink-0">
-                {project.subtitle}
-              </p>
+    <section className={style.section}>
+      <div className={style.pinContainer}>
+        <div className={style.heroContainer}>
+          <div className={style.textWrapper}>
+            <div className={style.titleContainer}>
+              <h1 className={style.title}>{project?.title}</h1>
+              <p className={style.subtitle}>{project.subtitle}</p>
             </div>
-            <div className="flex lg:gap-16 md:gap-11 sm:gap-6 gap-6">
-              <div className="flex flex-col md:gap-2 gap-0 flex-shrink-0">
-                <h4 className="hero projectText text-2xl">Serviços</h4>
+            <div className={style.infoContainer}>
+              <div className={style.servicesContainer}>
+                <h4 className={style.infoTitle}>Serviços</h4>
                 <ul>
                   {project?.services.map((service, index) => (
-                    <li
-                      key={index}
-                      className="hero projectText text-xl text-gray-400 flex-shrink-0"
-                    >
+                    <li key={index} className={style.serviceItem}>
                       {service}
                     </li>
                   ))}
                 </ul>
               </div>
-              <div className="flex flex-col md:gap-2 gap-0 max-w-[350px]">
-                <h4 className="hero projectText text-2xl">Sobre</h4>
-                <p className="hero projectText text-xl text-gray-400">
-                  {project?.description}
-                </p>
+              <div className={style.aboutContainer}>
+                <h4 className={style.infoTitle}>Sobre</h4>
+                <p className={style.description}>{project?.description}</p>
               </div>
             </div>
             {project?.link && (
-              <a
-                href={project?.link}
-                className="hero projectText flex gap-2 text-2xl link link--metis w-fit"
-              >
+              <a href={project?.link} className={style.link}>
                 Visitar Projeto
                 <ExternalLink strokeWidth={2.5} />
               </a>
             )}
           </div>
-          <div
-            id="heroVideo"
-            className="hero heroVideo relative w-full h-full z-0 lg:rounded-2xl !rounded-2xl overflow-hidden border-2 border-gray-50 aspect-video! min-h-32"
-          >
-            <a
-              href={project?.youtubeLink}
-              className="absolute inset-0 flex items-center justify-center aspect-video! pointer-events-auto cursor-pointer"
-            >
+          <div id="heroVideo" className={style.videoContainer}>
+            <a href={project?.youtubeLink} className={style.videoLink}>
               <iframe
-                className="absolute min-w-full min-h-full w-auto h-auto aspect-video! pointer-events-none"
+                className={style.iframe}
                 style={{
                   left: "50%",
                   top: "50%",
@@ -166,12 +148,9 @@ const Hero = () => {
             </a>
           </div>
         </div>
-        <div className="absolute heroBottom bottom-0 left-0 w-full common-py flex items-center justify-between">
-          <p className="hero text-xl text-gray">{project?.year}</p>
-          <a
-            onClick={scrollToAbout}
-            className="hero flex gap-1 text-gray text-xl cursor-pointer"
-          >
+        <div className={style.bottomContainer}>
+          <p className={style.year}>{project?.year}</p>
+          <a onClick={scrollToAbout} className={style.scrollButton}>
             Scroll
             <ChevronDown strokeWidth={2.5} className="pointer-events-none" />
           </a>
@@ -179,6 +158,36 @@ const Hero = () => {
       </div>
     </section>
   );
+};
+
+const style = {
+  section: "gsapRef w-full h-[200svh]",
+  pinContainer: "gsapPin w-full h-[100svh] flex flex-center relative",
+  heroContainer:
+    "projectHero w-full md:h-[65vh] h-auto flex lg:flex-row flex-col lg:items-center items-start justify-between lg:gap-16 md:gap-11 sm:gap-6 gap-6",
+  textWrapper:
+    "projectTexts ml-0 max-w-[600px] w-full flex flex-col lg:gap-16 md:gap-11 sm:gap-6 gap-6 flex-shrink-0",
+  titleContainer: "flex flex-col md:gap-1 gap-0",
+  title: "hero projectText text-8xl flex-shrink-0",
+  subtitle:
+    "hero projectText text-2xl text-gray-400 md:pb-2 pb-0 flex-shrink-0",
+  infoContainer: "flex lg:gap-16 md:gap-11 sm:gap-6 gap-6",
+  servicesContainer: "flex flex-col md:gap-2 gap-0 flex-shrink-0",
+  infoTitle: "hero projectText text-2xl",
+  serviceItem: "hero projectText text-xl text-gray-400 flex-shrink-0",
+  aboutContainer: "flex flex-col md:gap-2 gap-0 max-w-[350px]",
+  description: "hero projectText text-xl text-gray-400",
+  link: "hero projectText flex gap-2 text-2xl link link--metis w-fit",
+  videoContainer:
+    "hero heroVideo relative w-full h-full z-0 lg:rounded-2xl !rounded-2xl overflow-hidden border-2 border-gray-50 aspect-video! min-h-32",
+  videoLink:
+    "absolute inset-0 flex items-center justify-center aspect-video! pointer-events-auto cursor-pointer",
+  iframe:
+    "absolute min-w-full min-h-full w-auto h-auto aspect-video! pointer-events-none",
+  bottomContainer:
+    "absolute heroBottom bottom-0 left-0 w-full common-py flex items-center justify-between",
+  year: "hero text-xl text-gray",
+  scrollButton: "hero flex gap-1 text-gray text-xl cursor-pointer",
 };
 
 export default Hero;

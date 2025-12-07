@@ -12,18 +12,26 @@ const Controls: React.FC<ControlsProps> = ({ onNext, onPrev }) => {
     heroAnimateWithGsap(".hero");
   }, []);
   return (
-    <div className="fixed bottom-0 left-0 w-full justify-between common-padding md:flex hidden">
-      <h2 className="hero text-2xl">Codando - 2021/2025</h2>
-      <div className="flex gap-2">
-        <button className="projectsControl hero" onClick={onPrev}>
+    <div className={style.container}>
+      <h2 className={style.title}>Codando - 2021/2025</h2>
+      <div className={style.buttonsContainer}>
+        <button className={style.button} onClick={onPrev}>
           <ChevronLeft />
         </button>
-        <button className="projectsControl hero" onClick={onNext}>
+        <button className={style.button} onClick={onNext}>
           <ChevronRight />
         </button>
       </div>
     </div>
   );
+};
+
+const style = {
+  container:
+    "fixed bottom-0 left-0 w-full justify-between common-padding md:flex hidden",
+  title: "hero text-2xl",
+  buttonsContainer: "flex gap-2",
+  button: "projectsControl hero",
 };
 
 export default Controls;

@@ -3,9 +3,9 @@ import Lenis from "@studio-freight/lenis";
 import { projects } from "../constants/Projects";
 import { useGSAP } from "@gsap/react";
 import { animateVideoWithGsap, heroAnimateWithGsap } from "../utils/animations";
-import Controls from "../components/Projects/Controls";
+import Controls from "../components/projects/Controls";
 import { motion as m } from "framer-motion";
-import Footer from "../components/Footer/Footer";
+import Footer from "../components/layout/Footer";
 import { Link } from "react-router-dom";
 
 const Projects: React.FC = () => {
@@ -113,28 +113,28 @@ const Projects: React.FC = () => {
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.3, ease: "easeOut" }}
-      className="page md:h-[100vh] h-auto w-full md:flex block !justify-center lg:pt-0 md:pt-9 sm:pt-6 pt-6"
+      className={style.main}
     >
-      <div className="md:h-[65vh] h-auto w-full md:auto-cols-[23.5vw] auto-cols-auto md:grid-flow-col grid-flow-row md:gap-[2vw] gap-[4vh] md:p-0 common-padding md:m-0 common-my grid">
+      <div className={style.grid}>
         {displayProjects.map((project, index) => (
           <Link
             to={`/Projeto/${project.id}`}
             key={`${project.id}-${index}`} // Ensure unique keys
-            className="hero gridItem h-full flex flex-col md:gap-2 gap-1 project-item"
+            className={style.projectItem}
           >
-            <div className="h-full flex flex-center overflow-hidden rounded-2xl relative">
-              <picture className="homeImgProject cursor-pointer !scale-100">
+            <div className={style.imageContainer}>
+              <picture className={style.picture}>
                 <source srcSet={`/${project.image}.webp`} type="image/webp" />
                 <source srcSet={`/${project.image}.png`} type="image/png" />
                 <img
                   src={`/${project.image}.png`}
                   alt={project.image}
-                  className="w-full h-full object-cover"
+                  className={style.image}
                   loading="lazy"
                 />
               </picture>
               <video
-                className="homeVidProject cursor-pointer"
+                className={style.video}
                 preload="none"
                 muted
                 autoPlay
@@ -144,19 +144,34 @@ const Projects: React.FC = () => {
                 <source src={`/${project.video}.mp4`} type="video/mp4" />
               </video>
             </div>
-            <div className="flex flex-col md:gap-1 gap-0">
-              <p className="text-xl text-gray-400">{project.subtitle}</p>
-              <h2 className="text-3xl">{project.title}</h2>
+            <div className={style.projectInfo}>
+              <p className={style.subtitle}>{project.subtitle}</p>
+              <h2 className={style.title}>{project.title}</h2>
             </div>
           </Link>
         ))}
       </div>
       <Controls onNext={scrollForward} onPrev={scrollBackward} />
-      <div className="md:hidden block">
+      <div className={style.footerContainer}>
         <Footer />
       </div>
     </m.main>
   );
+};
+
+const style = {
+  main: "page md:h-[100vh] h-auto w-full md:flex block !justify-center lg:pt-0 md:pt-9 sm:pt-6 pt-6",
+  grid: "md:h-[65vh] h-auto w-full md:auto-cols-[23.5vw] auto-cols-auto md:grid-flow-col grid-flow-row md:gap-[2vw] gap-[4vh] md:p-0 common-padding md:m-0 common-my grid",
+  projectItem: "hero gridItem h-full flex flex-col md:gap-2 gap-1 project-item",
+  imageContainer:
+    "h-full flex flex-center overflow-hidden rounded-2xl relative",
+  picture: "homeImgProject cursor-pointer !scale-100",
+  image: "w-full h-full object-cover",
+  video: "homeVidProject cursor-pointer",
+  projectInfo: "flex flex-col md:gap-1 gap-0",
+  subtitle: "text-xl text-gray-400",
+  title: "text-3xl",
+  footerContainer: "md:hidden block",
 };
 
 export default Projects;

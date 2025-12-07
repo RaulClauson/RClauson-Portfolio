@@ -1,15 +1,15 @@
 import { useGSAP } from "@gsap/react";
 import { motion as m } from "framer-motion";
-import Hero from "../components/About/Hero/Hero";
-import Journey from "../components/About/Journey/Journey";
+import Hero from "../components/about/Hero";
+import Journey from "../components/about/Journey";
 import {
   animateMenuClose,
   animateMenuOpen,
   animateWithGsap,
 } from "../utils/animations";
-import Achivements from "../components/About/Achivements/Achivements";
-import Footer from "../components/Footer/Footer";
-import Specialty from "../components/About/Specialty/Specialty";
+import Achivements from "../components/about/Achivements";
+import Footer from "../components/layout/Footer";
+import Specialty from "../components/about/Skills";
 
 interface MenuProps {
   menu: boolean;
