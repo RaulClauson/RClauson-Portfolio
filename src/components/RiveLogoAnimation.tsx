@@ -6,7 +6,7 @@ const RiveLogoAnimation = () => {
   const INPUT_NAME = "Number"; // Nome da entrada usada no Rive
 
   const { rive, RiveComponent } = useRive({
-    src: "/rive/Animation_white.riv", // Substitua pelo caminho do arquivo .riv
+    src: "/rive/LogoAnimation.riv", // Substitua pelo caminho do arquivo .riv
     stateMachines: STATE_MACHINE_NAME,
     autoplay: true,
   });
