@@ -156,7 +156,7 @@ const Hero = () => {
                   transform: "translate(-50%, -50%)",
                   aspectRatio: "16/9",
                 }}
-                src={`${project?.youtube}&controls=0&autoplay=1&loop=0&mute=1&modestbranding=1&showinfo=0`}
+                src={`${project?.youtube}&controls=0&autoplay=1&loop=1&mute=1&modestbranding=1&showinfo=0`}
                 title="YouTube video player"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

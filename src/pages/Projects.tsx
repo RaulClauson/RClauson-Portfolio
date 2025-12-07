@@ -68,7 +68,7 @@ const Projects: React.FC = () => {
 
       const repeatedProjects = [
         ...projects,
-        ...projects.slice(0, projects.length - 2), // Exclude last item ! quanto mais projetos mais exclusões
+        ...projects.slice(0, projects.length - 5), // Exclude last item ! quanto mais projetos mais exclusões
       ];
       setDisplayProjects(repeatedProjects);
 
@@ -123,7 +123,7 @@ const Projects: React.FC = () => {
             className="hero gridItem h-full flex flex-col md:gap-2 gap-1 project-item"
           >
             <div className="h-full flex flex-center overflow-hidden rounded-2xl relative">
-              <picture className="homeImgProject cursor-pointer">
+              <picture className="homeImgProject cursor-pointer !scale-100">
                 <source srcSet={`/${project.image}.webp`} type="image/webp" />
                 <source srcSet={`/${project.image}.png`} type="image/png" />
                 <img

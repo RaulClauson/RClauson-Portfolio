@@ -14,24 +14,86 @@ import {
   Friendly,
   imgProject6,
   vidProject6,
+  imgProject7,
+  vidProject8,
+  imgProject9,
+  vidProject9,
+  vidProject7,
+  imgProject8,
 } from "./media";
 
 export const projects = [
+  {
+    id: "VagAI",
+    title: "VagAI",
+    subtitle: "(Global Solution 4 - FIAP)",
+    description:
+      "O aplicativo orquestra experiências de candidatura, usando .NET 8 para integrar análise semântica de currículos (BERT), modelos generativos (Gemini) e agentes de voz (ElevenLabs).",
+    image: imgProject9,
+    video: vidProject9,
+    year: "(2025) Novembro",
+    youtube:
+      "https://www.youtube.com/embed/hbtpgxa2ews?si=2ve7CBWqkpZMk9fa&amp;",
+    youtubeLink: "https://youtu.be/hbtpgxa2ews?si=2ve7CBWqkpZMk9fa",
+    credits: [
+      { name: "Luccas de Alencar", work: "Dev Back-End" },
+      { name: "Daniel Barros", work: "Dev IA" },
+    ],
+    skills: ["React Native", "Expo", "Typescript", "Tailwind CSS", "Firebase"],
+    services: [
+      "Mobile Development",
+      "Mobile Design",
+      "Branding",
+      "Motion Design",
+      "Video Editing",
+    ],
+    /* media */
+    team: LeoMi,
+  },
+  {
+    id: "MottuVision",
+    title: "MottuVision",
+    subtitle: "(Challenge 2 - FIAP)",
+    description:
+      "Um aplicativo inteligente desenvolvido para automatizar e otimizar o gerenciamento de pátios da Mottu.",
+    image: imgProject8,
+    video: vidProject8,
+    year: "(2025) Fev - Nov",
+    youtube:
+      "https://www.youtube.com/embed/cEEgseSmiNI?si=a1QIg2nolDLLixZp&amp;",
+    youtubeLink: "https://youtu.be/cEEgseSmiNI?si=a1QIg2nolDLLixZp",
+    credits: [
+      { name: "Leonardo Botelho", work: "Dev Back-End" },
+      { name: "Mirian Bronzati", work: "Dev IA" },
+      { name: "Luccas de Alencar", work: "Dev Back-End" },
+      { name: "Daniel Barros", work: "Dev IA" },
+    ],
+    skills: ["React Native", "Expo", "Typescript", "Tailwind CSS", "Firebase"],
+    services: [
+      "Mobile Development",
+      "Mobile Design",
+      "Branding",
+      "Motion Design",
+      "Video Editing",
+    ],
+    /* media */
+    team: LeoMi,
+  },
   {
     id: "Labubonico",
     title: "Labubonico",
     subtitle: "(Checkpoint IA - FIAP)",
     description:
       "Um aplicativo inteligente de gestão financeira pessoal que utiliza IA para automatizar o controle de despesas através de análise de documentos e conversação natural.",
-    image: imgProject6,
-    video: vidProject6,
-    year: "(2025) Out - Out",
+    image: imgProject7,
+    video: vidProject7,
+    year: "(2025) Outubro",
     youtube:
-      "https://www.youtube.com/embed/Y2QoEzdn1y0?si=1TVnrknj04tAR8Ah&amp;",
-    youtubeLink: "https://youtu.be/Y2QoEzdn1y0?si=hoQ_km6kLvUTqkVf",
+      "https://www.youtube.com/embed/GTqDcCWDYjY?si=--93EmsYuIocHkVE&amp;",
+    youtubeLink: "https://youtu.be/GTqDcCWDYjY?si=--93EmsYuIocHkVE",
     credits: [
-      { name: "Leonardo Botelho", work: "Dev Back-End" },
-      { name: "Mirian Bronzati", work: "Dev IA" },
+      { name: "Luccas de Alencar", work: "Dev Back-End" },
+      { name: "Daniel Barros", work: "Dev IA" },
     ],
     skills: [
       "React Native",

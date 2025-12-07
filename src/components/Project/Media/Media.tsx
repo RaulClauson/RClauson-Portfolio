@@ -8,6 +8,27 @@ interface Params {
   id: string;
 }
 
+const style = {
+  section: "w-full flex flex-col lg:gap-9 gap-6",
+  bigVideoContainer:
+    "w-full aspect-video overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50",
+  video: "w-full h-full object-cover",
+  imagesWrapper: "flex flex-col relative",
+  imagesContainer: "w-full overflow-hidden flex lg:gap-9 gap-6",
+  mobilePicture:
+    "w-[20%] h-fit lg:rounded-3xl rounded-2xl object-cover border-2 border-gray-50 overflow-hidden",
+  desktopPicture:
+    "lg:w-[calc(80%-36px)] w-[calc(80%-24px)] h-fit lg:rounded-3xl rounded-2xl object-cover border-2 border-gray-50 overflow-hidden",
+  img: "w-full h-fit object-cover",
+  expandButtonContainer: "common-padding lg:flex-center flex justify-center",
+  expandButton:
+    "w-fit text-2xl text-gray transition-all link link--metis flex items-center gap-2",
+  smallVideosWrapper: "flex flex-col lg:gap-9 gap-6",
+  smallVideosRow: "flex lg:flex-row flex-col lg:gap-9 gap-6 justify-center",
+  smallVideoContainer:
+    "w-full aspect-square overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50",
+};
+
 const Media = () => {
   const { id } = useParams<Params>();
   const project = projects.find((p) => p.id === id);
@@ -35,27 +56,21 @@ const Media = () => {
   if (!project) return null;
 
   return (
-    <section id="Media" className="w-full flex flex-col lg:gap-9 gap-6">
-      <div className="w-full aspect-video overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline={true}
-        >
+    <section id="Media" className={style.section}>
+      <div className={style.bigVideoContainer}>
+        <video className={style.video} autoPlay muted loop playsInline={true}>
           <source src={`/media/${project.id}/big1.webm`} type="video/webm" />
           <source src={`/media/${project.id}/big1.mp4`} type="video/mp4" />
         </video>
       </div>
-      <div className="flex flex-col relative">
+      <div className={style.imagesWrapper}>
         <div
           ref={imagesContainerRef} // Attach the ref to this div
-          className={`w-full ${
+          className={`${style.imagesContainer} ${
             expand ? "h-fit" : "lg:max-h-[300svh] h-fit"
-          } overflow-hidden flex lg:gap-9 gap-6`}
+          }`}
         >
-          <picture className="w-[20%] h-fit lg:rounded-3xl rounded-2xl object-cover border-2 border-gray-50 overflow-hidden">
+          <picture className={style.mobilePicture}>
             <source
               src={`/media/${project.id}/mobile.webp`}
               type="image/webp"
@@ -63,18 +78,18 @@ const Media = () => {
             <source src={`/media/${project.id}/mobile.png`} type="image/png" />
             <img
               src={`/media/${project.id}/mobile.png`}
-              className="w-full h-fit object-cover"
+              className={style.img}
               loading="lazy"
               alt="Landing page"
               onLoad={handleImageLoad}
             />
           </picture>
-          <picture className="lg:w-[calc(80%-36px)] w-[calc(80%-24px)] h-fit lg:rounded-3xl rounded-2xl object-cover border-2 border-gray-50 overflow-hidden">
+          <picture className={style.desktopPicture}>
             <source src={`/media/${project.id}/desk.webp`} type="image/webp" />
             <source src={`/media/${project.id}/desk.png`} type="image/png" />
             <img
               src={`/media/${project.id}/desk.png`}
-              className="w-full h-fit object-cover"
+              className={style.img}
               alt="Landing page"
               onLoad={handleImageLoad}
               loading="lazy"
@@ -82,12 +97,12 @@ const Media = () => {
           </picture>
         </div>
         {showExpandButton && (
-          <div className="common-padding lg:flex-center flex justify-center">
+          <div className={style.expandButtonContainer}>
             <button
               onClick={() => {
                 setExpand(!expand);
               }}
-              className="w-fit text-2xl text-gray transition-all link link--metis flex items-center gap-2"
+              className={style.expandButton}
             >
               {expand ? (
                 <>
@@ -102,23 +117,17 @@ const Media = () => {
           </div>
         )}
       </div>
-      <div className="w-full aspect-video overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
-        <video
-          className="w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline={true}
-        >
+      <div className={style.bigVideoContainer}>
+        <video className={style.video} autoPlay muted loop playsInline={true}>
           <source src={`/media/${project.id}/big2.webm`} type="video/webm" />
           <source src={`/media/${project.id}/big2.mp4`} type="video/mp4" />
         </video>
       </div>
-      <div className="flex flex-col lg:gap-9 gap-6">
-        <div className="flex lg:flex-row flex-col lg:gap-9 gap-6">
-          <div className="w-full aspect-square overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
+      <div className={style.smallVideosWrapper}>
+        <div className={style.smallVideosRow}>
+          <div className={style.smallVideoContainer}>
             <video
-              className="w-full h-full object-cover"
+              className={style.video}
               autoPlay
               muted
               loop
@@ -134,9 +143,9 @@ const Media = () => {
               />
             </video>
           </div>
-          <div className="w-full aspect-square overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
+          <div className={style.smallVideoContainer}>
             <video
-              className="w-full h-full object-cover"
+              className={style.video}
               autoPlay
               muted
               loop
@@ -153,10 +162,10 @@ const Media = () => {
             </video>
           </div>
         </div>
-        <div className="flex lg:flex-row flex-col lg:gap-9 gap-6">
-          <div className="w-full aspect-square overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
+        <div className={style.smallVideosRow}>
+          <div className={style.smallVideoContainer}>
             <video
-              className="w-full h-full object-cover"
+              className={style.video}
               autoPlay
               muted
               loop
@@ -172,9 +181,9 @@ const Media = () => {
               />
             </video>
           </div>
-          <div className="w-full aspect-square overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
+          <div className={style.smallVideoContainer}>
             <video
-              className="w-full h-full object-cover"
+              className={style.video}
               autoPlay
               muted
               loop
@@ -191,14 +200,8 @@ const Media = () => {
             </video>
           </div>
         </div>
-        <div className="w-full aspect-video overflow-hidden lg:rounded-3xl rounded-2xl border-2 border-gray-50">
-          <video
-            className="w-full h-full object-cover"
-            autoPlay
-            muted
-            loop
-            playsInline={true}
-          >
+        <div className={style.bigVideoContainer}>
+          <video className={style.video} autoPlay muted loop playsInline={true}>
             <source src={`/media/${project.id}/big3.webm`} type="video/webm" />
             <source src={`/media/${project.id}/big3.mp4`} type="video/mp4" />
           </video>
