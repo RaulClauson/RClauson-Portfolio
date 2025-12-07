@@ -3,7 +3,7 @@ import Lenis from "@studio-freight/lenis";
 import { projects } from "../constants/Projects";
 import { useGSAP } from "@gsap/react";
 import { animateVideoWithGsap, heroAnimateWithGsap } from "../utils/animations";
-import Controls from "../components/projects/Controls";
+import Controls from "../components/common/Controls";
 import { motion as m } from "framer-motion";
 import Footer from "../components/layout/Footer";
 import { Link } from "react-router-dom";
