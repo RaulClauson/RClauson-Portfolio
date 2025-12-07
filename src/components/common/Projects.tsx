@@ -1,13 +1,23 @@
-import { projects } from "../../constants/Projects";
+import { projects as projectsConst } from "../../constants/Projects";
 import { useGSAP } from "@gsap/react";
 import { animateVideoWithGsap, animateWithGsap } from "../../utils/animations";
 import { imgProject1 } from "../../constants/media";
 import { ArrowRight } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, Params, useParams } from "react-router-dom";
+import { useTranslation } from "../../i18n/useTranslation";
 
 const Projects = () => {
-  // No longer need refs for individual elements
-  // Instead use the class names to target the elements
+  const { t } = useTranslation();
+  const { id } = useParams<Params>();
+  let projects = projectsConst;
+  if (id) {
+    const currentIndex = projectsConst.findIndex((p) => p.id === id);
+    const nextProject =
+      currentIndex < projectsConst.length - 1
+        ? projectsConst[currentIndex + 1]
+        : projectsConst[0];
+    projects = [nextProject];
+  }
 
   useGSAP(() => {
     // Select all project item containers
@@ -30,10 +40,11 @@ const Projects = () => {
   return (
     <section id="Projects" className={style.section}>
       <div className={style.header}>
-        <h1 className={style.title}>Projetos</h1>
+        <h1 className={style.title}>
+          {id ? t.project.nextProject : t.home.projects.title}
+        </h1>
         <p className={style.description}>
-          Aqui estão os principais projetos que trabalhei para a criação de
-          experiências memoráveis.
+          {id ? "" : t.home.projects.description}
         </p>
       </div>
       <div className={style.grid}>
@@ -83,7 +94,7 @@ const Projects = () => {
               />
             </picture>
             <Link to="/Projetos" className={style.viewAllLink}>
-              Ver todos projetos
+              {t.home.projects.viewAllProjects}
               <ArrowRight strokeWidth={2.5} className="lg:size-12 size-9" />
             </Link>
           </div>

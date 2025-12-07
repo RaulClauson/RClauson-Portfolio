@@ -4,8 +4,10 @@ import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 gsap.registerPlugin(ScrollToPlugin);
 import gsap from "gsap";
 import RiveLogoAnimation from "../common/RiveLogoAnimation";
+import { useTranslation } from "../../i18n/useTranslation";
 
 const Footer = () => {
+  const { t } = useTranslation();
   const scrollToTop = (e: React.MouseEvent) => {
     e.preventDefault();
     gsap.to(window, {
@@ -20,42 +22,42 @@ const Footer = () => {
       <div className={style.topSection}>
         <div className={style.linksContainer}>
           <ul className={style.list}>
-            <li className={style.listTitle}>Sitemap</li>
+            <li className={style.listTitle}>{t.footer.sitemap}</li>
             <li>
               <Link to="/" className={style.link}>
-                Início
+                {t.footer.home}
               </Link>
             </li>
             <li>
               <Link to="/Projetos" className={style.link}>
-                Projetos
+                {t.footer.projects}
               </Link>
             </li>
             <li>
               <Link to="/Sobre" className={style.link}>
-                Sobre
+                {t.footer.about}
               </Link>
             </li>
           </ul>
           <ul className={style.list}>
-            <li className={style.listTitle}>Redes</li>
+            <li className={style.listTitle}>{t.footer.networks}</li>
             <li>
               <a
                 href="https://www.linkedin.com/in/raul-clauson/"
                 className={style.link}
               >
-                Linkedin
+                {t.footer.linkedin}
               </a>
             </li>
             <li>
               <a href="https://github.com/RaulClauson" className={style.link}>
-                Github
+                {t.footer.github}
               </a>
             </li>
           </ul>
         </div>
         <ul className={style.contactList}>
-          <li className={style.listTitle}>Contato</li>
+          <li className={style.listTitle}>{t.footer.contact}</li>
           <li>
             <a href="mailto:rclauson141@gmail.com" className={style.link}>
               rclauson141@gmail.com
@@ -68,7 +70,7 @@ const Footer = () => {
           <RiveLogoAnimation />
         </Link>
         <a href="#" className={style.scrollTopButton} onClick={scrollToTop}>
-          Voltar <ChevronUp strokeWidth={2.5} />
+          {t.footer.back} <ChevronUp strokeWidth={2.5} />
         </a>
       </div>
     </footer>

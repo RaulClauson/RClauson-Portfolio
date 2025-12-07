@@ -4,6 +4,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { heroAnimateWithGsap } from "../../utils/animations";
 import { ChevronDown, ExternalLink } from "lucide-react";
+import { useTranslation } from "../../i18n/useTranslation";
 
 interface Params {
   [key: string]: string | undefined;
@@ -11,8 +12,15 @@ interface Params {
 }
 
 const Hero = () => {
+  const { t } = useTranslation();
   const { id } = useParams<Params>();
   const project = projects.find((p) => p.id === id);
+
+  // Get translated project data
+  const projectKey = id
+    ?.toLowerCase()
+    .replace("-", "") as keyof typeof t.projects;
+  const translatedProject = t.projects[projectKey];
 
   useGSAP(() => {
     heroAnimateWithGsap(".hero", 0.1);
@@ -107,7 +115,7 @@ const Hero = () => {
             </div>
             <div className={style.infoContainer}>
               <div className={style.servicesContainer}>
-                <h4 className={style.infoTitle}>Serviços</h4>
+                <h4 className={style.infoTitle}>{t.project.services}</h4>
                 <ul>
                   {project?.services.map((service, index) => (
                     <li key={index} className={style.serviceItem}>
@@ -117,13 +125,15 @@ const Hero = () => {
                 </ul>
               </div>
               <div className={style.aboutContainer}>
-                <h4 className={style.infoTitle}>Sobre</h4>
-                <p className={style.description}>{project?.description}</p>
+                <h4 className={style.infoTitle}>{t.project.about}</h4>
+                <p className={style.description}>
+                  {translatedProject?.description}
+                </p>
               </div>
             </div>
             {project?.link && (
               <a href={project?.link} className={style.link}>
-                Visitar Projeto
+                {t.project.visitProject}
                 <ExternalLink strokeWidth={2.5} />
               </a>
             )}
@@ -149,9 +159,9 @@ const Hero = () => {
           </div>
         </div>
         <div className={style.bottomContainer}>
-          <p className={style.year}>{project?.year}</p>
+          <p className={style.year}>{translatedProject.year}</p>
           <a onClick={scrollToAbout} className={style.scrollButton}>
-            Scroll
+            {t.project.scroll}
             <ChevronDown strokeWidth={2.5} className="pointer-events-none" />
           </a>
         </div>

@@ -3,8 +3,10 @@ import { animateWithGsap } from "../../utils/animations";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
+import { useTranslation } from "../../i18n/useTranslation";
 
 const Achivements = () => {
+  const { t } = useTranslation();
   useGSAP(() => {
     animateWithGsap(".gsapTextAchivements");
     animateWithGsap(".gsapText2Achivements");
@@ -67,7 +69,7 @@ const Achivements = () => {
   return (
     <section className={style.section}>
       <div className={style.imageContainer}>
-        <h2 className={style.title}>Jornada</h2>
+        <h2 className={style.title}>{t.about.achievements.title}</h2>
         <div className={style.pinContainer}>
           <div className={style.imageWrapper}>
             <img
@@ -82,39 +84,31 @@ const Achivements = () => {
             />
           </div>
           <div className={style.textContainer}>
-            <p className={style.titleImg1}>58º EXCUTE</p>
-            <p className={style.textImg1}>2023</p>
-            <p className={style.titleImg2}>FIAP NEXT</p>
-            <p className={style.textImg2}>2024</p>
+            <p className={style.titleImg1}>{t.about.achievements.event1}</p>
+            <p className={style.textImg1}>{t.about.achievements.year1}</p>
+            <p className={style.titleImg2}>{t.about.achievements.event2}</p>
+            <p className={style.textImg2}>{t.about.achievements.year2}</p>
           </div>
         </div>
       </div>
       <div className={style.contentContainer}>
         <div className={style.textSection}>
-          <p className={style.sectionTitle}>Melhor TCC</p>
+          <p className={style.sectionTitle}>{t.about.achievements.bestTCC}</p>
           <p className={style.sectionText}>
-            Durante minha trajetória na ETEC Jorge Street, participei da EXCUTE
-            com meu grupo e conquistamos o 1º lugar com nosso TCC. Foi uma
-            experiência inesquecível, repleta de desafios e aprendizados.
+            {t.about.achievements.bestTCCText1}
           </p>
           <p className={style.sectionText}>
-            Esse reconhecimento reforçou minha paixão por tecnologia e inovação,
-            mostrando o impacto que boas ideias, dedicação e trabalho em equipe
-            podem gerar.
+            {t.about.achievements.bestTCCText2}
           </p>
         </div>
         <div className={style.division}></div>
         <div className={style.textSection}>
-          <p className={style.sectionTitle}>Finalistas Challenge</p>
+          <p className={style.sectionTitle}>{t.about.achievements.finalists}</p>
           <p className={style.sectionText}>
-            Durante minha jornada na FIAP, tive a honra de apresentar, junto com
-            meu grupo, nosso projeto no NEXT, a maior feira de tecnologia do
-            Brasil. Chegar até lá foi uma grande conquista, fruto de muito
-            esforço e dedicação.
+            {t.about.achievements.finalistsText1}
           </p>
           <p className={style.sectionText}>
-            Foi incrível estar entre grandes talentos e compartilhar nossa
-            solução em um evento tão importante para o futuro da tecnologia.
+            {t.about.achievements.finalistsText2}
           </p>
         </div>
       </div>

@@ -10,8 +10,10 @@ import {
   AdvancedVideo,
   AdvancedVideo as AdvancedVideoComponent,
 } from "@cloudinary/react";
+import { useTranslation } from "../../i18n/useTranslation";
 
 const Hero = () => {
+  const { t } = useTranslation();
   const [videoSrc, setVideoSrc] = useState(heroVideo);
   const [isPlaying, setIsPlaying] = useState(true);
   const videoRef = useRef<AdvancedVideoComponent | null>(null); // Ref for the AdvancedVideo component
@@ -108,11 +110,11 @@ const Hero = () => {
       </div>
       <div className={style.footer}>
         <div className={style.titleContainer}>
-          <p className={style.subtitle}>Desenvolvedor</p>
-          <h1 className={style.title}>Front-End</h1>
+          <p className={style.subtitle}>{t.home.hero.role}</p>
+          <h1 className={style.title}>{t.home.hero.title}</h1>
         </div>
         <button onClick={scrollToAbout} className={style.scrollButton}>
-          Scroll
+          {t.home.hero.scroll}
           <ChevronDown strokeWidth={2.5} className="pointer-events-none" />
         </button>
       </div>

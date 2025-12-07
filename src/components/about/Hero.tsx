@@ -4,8 +4,10 @@ import {
   heroAboutAnimateWithGsap,
 } from "../../utils/animations";
 import GridDistortion from "./GridDistortion";
+import { useTranslation } from "../../i18n/useTranslation";
 
 const Hero = () => {
+  const { t } = useTranslation();
   useGSAP(() => {
     heroAboutAnimateWithGsap(".heroAbout", ".heroImgAbout");
     animateWithGsap(".gsap");
@@ -24,11 +26,8 @@ const Hero = () => {
         />
       </div>
       <div className={style.contentContainer}>
-        <h1 className={style.title}>Raul Clauson</h1>
-        <p className={style.description}>
-          Olá, me chamo Raul e sou Desenvolvedor Front-End em construção, com
-          paixão por interfaces intuitivas e experiências digitais marcantes.{" "}
-        </p>
+        <h1 className={style.title}>{t.about.hero.title}</h1>
+        <p className={style.description}>{t.about.hero.description}</p>
       </div>
     </section>
   );

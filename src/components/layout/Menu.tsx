@@ -1,12 +1,14 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "../../i18n/useTranslation";
 interface MenuProps {
   menu: boolean;
   setMenu: (value: boolean) => void;
 }
 
 const Menu: React.FC<MenuProps> = ({ menu, setMenu }) => {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const isActive = (path: string) => location.pathname === path;
@@ -62,7 +64,7 @@ const Menu: React.FC<MenuProps> = ({ menu, setMenu }) => {
             onClick={handleCloseMenu}
             className={`${style.link} ${isActive("/") ? style.activeLink : ""}`}
           >
-            Início
+            {t.menu.home}
           </Link>
         </li>
         <li className={style.listItem}>
@@ -73,7 +75,7 @@ const Menu: React.FC<MenuProps> = ({ menu, setMenu }) => {
               isActive("/Projetos") ? style.activeLink : ""
             }`}
           >
-            Projetos
+            {t.menu.projects}
           </Link>
         </li>
         <li className={style.listItem}>
@@ -84,7 +86,7 @@ const Menu: React.FC<MenuProps> = ({ menu, setMenu }) => {
               isActive("/Sobre") ? style.activeLink : ""
             }`}
           >
-            Sobre
+            {t.menu.about}
           </Link>
         </li>
         <li className={style.listItem}>
@@ -94,7 +96,7 @@ const Menu: React.FC<MenuProps> = ({ menu, setMenu }) => {
               isActive("/Contato") ? style.activeLink : ""
             }`}
           >
-            Contato
+            {t.menu.contact}
           </button>
         </li>
       </ul>

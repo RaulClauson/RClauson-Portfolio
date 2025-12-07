@@ -1,7 +1,9 @@
 import { useGSAP } from "@gsap/react";
 import { animateWithGsap } from "../../utils/animations";
+import { useTranslation } from "../../i18n/useTranslation";
 
 const Journey = () => {
+  const { t } = useTranslation();
   useGSAP(() => {
     animateWithGsap(".gsapTextJourney");
     animateWithGsap(".gsapText2Journey");
@@ -9,38 +11,16 @@ const Journey = () => {
   }, []);
   return (
     <section className={style.section}>
-      <h2 className={style.title}>Jornada</h2>
+      <h2 className={style.title}>{t.about.journey.title}</h2>
       <div className={style.contentContainer}>
-        <p className={style.text1}>
-          Minha jornada no mundo da tecnologia começou na ETEC Jorge Street,
-          onde o Ensino Médio Integrado ao Técnico me abriu as portas para a
-          programação.
-        </p>
-        <p className={style.text1}>
-          Foi lá que descobri a magia de transformar ideias em interfaces que
-          realmente conectam com as pessoas.
-        </p>
+        <p className={style.text1}>{t.about.journey.paragraph1}</p>
+        <p className={style.text1}>{t.about.journey.paragraph2}</p>
         <div className={style.division2}></div>
-        <p className={style.text2}>
-          Atualmente, estou aprofundando meus conhecimentos em Análise e
-          Desenvolvimento de Sistemas, buscando dominar as últimas tecnologias e
-          tendências do Front-End.
-        </p>
-        <p className={style.text2}>
-          Acredito que a constante evolução nesse campo é fundamental para criar
-          soluções inovadoras e impactantes.
-        </p>
+        <p className={style.text2}>{t.about.journey.paragraph3}</p>
+        <p className={style.text2}>{t.about.journey.paragraph4}</p>
         <div className={style.division3}></div>
-        <p className={style.text3}>
-          Busco sempre aprimorar minhas habilidades para construir interfaces
-          que sejam não só esteticamente agradáveis, mas também intuitivas e
-          fáceis de usar.
-        </p>
-        <p className={style.text3}>
-          A tecnologia tem o poder de transformar a vida das pessoas, e quero
-          contribuir para esse futuro através de projetos que realmente façam a
-          diferença.
-        </p>
+        <p className={style.text3}>{t.about.journey.paragraph5}</p>
+        <p className={style.text3}>{t.about.journey.paragraph6}</p>
       </div>
     </section>
   );

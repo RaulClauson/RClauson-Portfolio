@@ -8,9 +8,9 @@ import PageLoading from "./components/common/PageLoading.tsx";
 import CustomCursor from "./components/common/CustomCursor.tsx";
 import { BrowserRouter } from "react-router-dom";
 import Menu from "./components/layout/Menu.tsx";
+import { LanguageProvider } from "./i18n/LanguageContext.tsx";
 
 export function Root() {
-  /*   const location = useLocation(); */
   const [menu, setMenu] = useState(false);
 
   useEffect(() => {
@@ -36,9 +36,11 @@ export function Root() {
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <BrowserRouter>
-      <Root />
-      <Analytics />
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <Root />
+        <Analytics />
+      </BrowserRouter>
+    </LanguageProvider>
   </StrictMode>
 );

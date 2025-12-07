@@ -5,6 +5,8 @@ import { headerAnimateWithGsap } from "../../utils/animations";
 import { AlignJustify, X } from "lucide-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import RiveLogoAnimation from "../common/RiveLogoAnimation";
+import { useTranslation } from "../../i18n/useTranslation";
+import LanguageSwitcher from "../common/LanguageSwitcher";
 
 interface MenuProps {
   menu: boolean;
@@ -12,6 +14,7 @@ interface MenuProps {
 }
 
 const Header: React.FC<MenuProps> = ({ menu, setMenu }) => {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigate = useNavigate();
   const lastScrollY = useRef(0);
@@ -93,15 +96,18 @@ const Header: React.FC<MenuProps> = ({ menu, setMenu }) => {
         </Link>
         <div className={style.desktopLinks}>
           <Link to="/Projetos" className={style.link}>
-            Projetos
+            {t.header.projects}
           </Link>
           <Link to="/Sobre" className={style.link}>
-            Sobre
+            {t.header.about}
           </Link>
         </div>
-        <button onClick={scrollToFooter} className={style.contactButton}>
-          Contato
-        </button>
+        <div className="flex-center gap-4">
+          <button onClick={scrollToFooter} className={style.contactButton}>
+            {t.header.contact}
+          </button>
+          <LanguageSwitcher />
+        </div>
         <button className={style.menuButton} onClick={() => setMenu(!menu)}>
           {menu ? (
             <X size={26} strokeWidth={2.5} />

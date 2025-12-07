@@ -4,8 +4,8 @@ import Hero from "../components/project/Hero";
 import Media from "../components/project/Media";
 import Footer from "../components/layout/Footer";
 import Credits from "../components/project/Credits";
-import Next from "../components/project/Next";
 import { animateMenuClose, animateMenuOpen } from "../utils/animations";
+import Projects from "../components/common/Projects";
 
 interface MenuProps {
   menu: boolean;
@@ -33,7 +33,7 @@ const Project: React.FC<MenuProps> = ({ menu }) => {
         <Media />
         <Credits />
       </div>
-      <Next />
+      <Projects />
       <Footer />
     </m.main>
   );

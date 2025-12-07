@@ -2,8 +2,10 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { animateWithGsap } from "../../utils/animations";
 import { Link } from "react-router-dom";
+import { useTranslation } from "../../i18n/useTranslation";
 
 const About = () => {
+  const { t } = useTranslation();
   useGSAP(() => {
     animateWithGsap(".about");
     gsap.to(".homeImgAbout", {
@@ -47,9 +49,9 @@ const About = () => {
   return (
     <section id="About" className={style.section}>
       <div className={style.textContainer}>
-        <p className={style.text1}>Desenvolvedor Front-End em construção,</p>
-        <p className={style.text2}>com paixão por interfaces intuitivas e</p>
-        <p className={style.text3}>experiências digitais marcantes.</p>
+        <p className={style.text1}>{t.home.about.text1}</p>
+        <p className={style.text2}>{t.home.about.text2}</p>
+        <p className={style.text3}>{t.home.about.text3}</p>
       </div>
       <div className={style.imageWrapper}>
         <div className={style.imageContainer}>
@@ -67,13 +69,9 @@ const About = () => {
         </div>
       </div>
       <div className={style.textContainerHidden}>
-        <p className={style.hiddenText1}>
-          Desenvolvedor Front-End em construção,
-        </p>
-        <p className={style.hiddenText2}>
-          com paixão por interfaces intuitivas e
-        </p>
-        <p className={style.hiddenText3}>experiências digitais marcantes.</p>
+        <p className={style.hiddenText1}>{t.home.about.text1}</p>
+        <p className={style.hiddenText2}>{t.home.about.text2}</p>
+        <p className={style.hiddenText3}>{t.home.about.text3}</p>
       </div>
     </section>
   );

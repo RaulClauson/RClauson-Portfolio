@@ -13,7 +13,7 @@ const Controls: React.FC<ControlsProps> = ({ onNext, onPrev }) => {
   }, []);
   return (
     <div className={style.container}>
-      <h2 className={style.title}>Codando - 2021/2025</h2>
+      <h2 className={style.title}>(2021 - 2025)</h2>
       <div className={style.buttonsContainer}>
         <button className={style.button} onClick={onPrev}>
           <ChevronLeft />
