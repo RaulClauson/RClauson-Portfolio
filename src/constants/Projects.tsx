@@ -31,6 +31,7 @@ export const projects = [
       "O aplicativo orquestra experiências de candidatura, usando .NET 8 para integrar análise semântica de currículos (BERT), modelos generativos (Gemini) e agentes de voz (ElevenLabs).",
     image: imgProject9,
     video: vidProject9,
+    link: "https://github.com/FIAP-MOBILE/global-solution-vagai",
     year: "(2025) Novembro",
     youtube:
       "https://www.youtube.com/embed/hbtpgxa2ews?si=2ve7CBWqkpZMk9fa&amp;",
@@ -56,6 +57,7 @@ export const projects = [
       "Um aplicativo inteligente desenvolvido para automatizar e otimizar o gerenciamento de pátios da Mottu.",
     image: imgProject8,
     video: vidProject8,
+    link: "https://github.com/MOTTU-VISION/mobile",
     year: "(2025) Fev - Nov",
     youtube:
       "https://www.youtube.com/embed/cEEgseSmiNI?si=a1QIg2nolDLLixZp&amp;",
@@ -85,6 +87,7 @@ export const projects = [
       "Um aplicativo inteligente de gestão financeira pessoal que utiliza IA para automatizar o controle de despesas através de análise de documentos e conversação natural.",
     image: imgProject7,
     video: vidProject7,
+    link: "https://github.com/LABUBONICO/labubonico-mobile",
     year: "(2025) Outubro",
     youtube:
       "https://www.youtube.com/embed/GTqDcCWDYjY?si=--93EmsYuIocHkVE&amp;",
@@ -117,6 +120,7 @@ export const projects = [
       "Aplicativo mobile desenvolvido para monitoramento e resposta a desastres naturais.",
     image: imgProject6,
     video: vidProject6,
+    link: "https://github.com/FIAP-MOBILE/global-solution-1-semestre-weatherman",
     year: "(2025) Mai - Jun",
     youtube:
       "https://www.youtube.com/embed/Y2QoEzdn1y0?si=1TVnrknj04tAR8Ah&amp;",
